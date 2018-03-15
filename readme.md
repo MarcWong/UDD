@@ -9,6 +9,8 @@
 |建筑  |  1   |
 |地面  |  2   |
 
+目前数据集还在构建中，之后会考虑加入更多的语义类。
+
 *数据集示例：*
 
 ![原图](img/DJI_0285.JPG)
@@ -16,8 +18,11 @@
 ## 1.命名规则及标注规范
 ### 1.0 命名规则
 **/src**  ```原图```
+
 **/gt**  ```ground truth```
+
 **/ori**  ```标注类别结果```
+
 **/visualization** ```可视化结果```
 
 ### 1.1 标注规范
@@ -34,8 +39,12 @@
 
 ### 1.2 标注处理脚本
 
-见[labelCombine.m](https://github.com/MarcWong/PAID/blob/master/script/labelCombile.m)
+- ### [labelCombine.m](https://github.com/MarcWong/PAID/blob/master/script/labelCombine.m)
+将类别混合为一张gt，可自定义语义标签规则。
 
+- ### [gtVisual.m](https://github.com/MarcWong/PAID/blob/master/script/gtVisual.m)
+write_file_flag：是否要保存visualization的结果
+resize_rate：对于原图可视化时间过长，可以resize到1/4的尺寸看效果
 
 ## ***致谢***
-感谢对数据集构建做出贡献的朋友们（排名不分先后，且不一定全）：邓枭、顾友鹏、侯忱、金朝、宋博宁、王尧、文佑尔、易康睿、周昊天
+感谢对数据集构建做出贡献的朋友们（排名不分先后，且不一定全）：邓枭、顾友鹏、侯忱、金朝、宋博宁、王尧、文佑尔、易康睿、周昊天。
