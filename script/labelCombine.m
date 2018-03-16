@@ -30,7 +30,7 @@ for imgNum = 1:imgSum
     imgT = imread(imgT_uri);
     imgGT_uri = [gtpath strrep(listing(imgNum).name,'.JPG','.png')];
     
-    imgVISUAL_uri = [visualpath strrep(listing(imgNum).name,'.JPG','_visual_gt.png')];
+    imgVIS_uri = [visualpath strrep(listing(imgNum).name,'.JPG','_visual_gt.png')];
     if length(size(imgB))==3
         imgB = rgb2gray(imgB);
     end
@@ -93,5 +93,5 @@ for imgNum = 1:imgSum
     end
     imwrite(imgGT,imgGT_uri);
     %----------------------------------------%
-    gtVisual(imgGT_uri,imgORI_uri,imgVISUAL_uri,write_class_flag,write_visual_flag, resize_rate);
+    gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri,write_class_flag,write_visual_flag, resize_rate);
 end
