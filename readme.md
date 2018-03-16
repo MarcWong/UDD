@@ -31,6 +31,9 @@
 
 *标注结果示例：*
 ![树](img/DJI_0285_t.png)
+
+**[点此查看ps操作](tree.pdf)**
+
 - ### 建筑
 ##### 新建空白图层，通过多边形套索，选取建筑后填充为黑色，所有建筑标注完成后生成位图。
 
@@ -39,10 +42,10 @@
 
 ### 1.2 标注处理脚本
 
-- ### [labelCombine.m](https://github.com/MarcWong/PSSD/blob/master/script/labelCombine.m)
+- ### [labelCombine.m](https://github.com/MarcWong/PSSI/blob/master/script/labelCombine.m)
 将类别混合为一张gt，可自定义语义标签规则。
 
-- ### [gtVisual.m](https://github.com/MarcWong/PSSD/blob/master/script/gtVisual.m)
+- ### [gtVisual.m](https://github.com/MarcWong/PSSI/blob/master/script/gtVisual.m)
 write_file_flag：是否要保存visualization的结果
 resize_rate：对于原图可视化时间过长，可以resize到1/4的尺寸看效果
 
