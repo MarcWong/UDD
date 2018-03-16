@@ -1,4 +1,4 @@
-# PKU Aerial Image Dataset
+# PKU SFM Semantic Dataset(PSSD)
 
 ## 0.数据集简介
 4000*3000的航拍图像,共计288张，目前共有三个语义类。
@@ -39,10 +39,10 @@
 
 ### 1.2 标注处理脚本
 
-- ### [labelCombine.m](https://github.com/MarcWong/PAID/blob/master/script/labelCombine.m)
+- ### [labelCombine.m](https://github.com/MarcWong/PSSD/blob/master/script/labelCombine.m)
 将类别混合为一张gt，可自定义语义标签规则。
 
-- ### [gtVisual.m](https://github.com/MarcWong/PAID/blob/master/script/gtVisual.m)
+- ### [gtVisual.m](https://github.com/MarcWong/PSSD/blob/master/script/gtVisual.m)
 write_file_flag：是否要保存visualization的结果
 resize_rate：对于原图可视化时间过长，可以resize到1/4的尺寸看效果
 
