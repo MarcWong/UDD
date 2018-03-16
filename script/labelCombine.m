@@ -1,19 +1,22 @@
 %%
 %label definition
-%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------%
 %tree: 0
 %building: 1
 %ground: 2
 %unknown: 255, but now don't use it
 %
-%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------%
 
 %%
 %env setup
-srcpath='F:\Dataset\rawm1\src\';
-oripath='F:\Dataset\rawm1\ori\';
-gtpath='F:\Dataset\rawm1\gt\';
-visualpath='F:\Dataset\rawm1\visualization\';
+srcpath='E:\Dataset\rawm1\src\';
+oripath='E:\Dataset\rawm1\ori\';
+gtpath='E:\Dataset\rawm1\gt\';
+visualpath='E:\Dataset\rawm1\visualization\';
+write_class_flag = 1;
+write_visual_flag = 0;
+resize_rate=0.25;
 %%
 listing = dir([srcpath '*.JPG']);
 imgSum = length(listing);
@@ -32,6 +35,7 @@ for imgNum = 1:imgSum
         imgB = rgb2gray(imgB);
     end
     [m n] = size(imgB);
+    %----------------------------------------%
     %{
     %convert rgb to logical
     if length(size(imgB))==3
@@ -53,7 +57,7 @@ for imgNum = 1:imgSum
     end    
     [m n] = size(imgB);
     
-    
+    %----------------------------------------%
     %convert rgb to logical
     if length(size(imgT))==3
         imgT = rgb2gray(imgT);
@@ -72,6 +76,7 @@ for imgNum = 1:imgSum
         end
     end
     %}
+    %----------------------------------------%
     % set ground truth
     imgGT = uint8(zeros(m,n));
     %imshow(imgT);
@@ -87,8 +92,6 @@ for imgNum = 1:imgSum
        end
     end
     imwrite(imgGT,imgGT_uri);
-    
-    gtVisual(imgGT_uri,imgORI_uri,imgVISUAL_uri, 1,0.25);
-    %imagesc(imgGT);
-    %imwrite(imgGT,imgGT_uri);
+    %----------------------------------------%
+    gtVisual(imgGT_uri,imgORI_uri,imgVISUAL_uri,write_class_flag,write_visual_flag, resize_rate);
 end
