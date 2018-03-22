@@ -1,5 +1,5 @@
-view_mode = 0; % 0 automatic, 1 manual
 visualpath='E:\Dataset\rawm1\visualization\';
+view_mode = 0; % 0 automatic, 1 manual
 listing = dir([visualpath '*.png']);
 imgSum = length(listing);
 for imgNum = 1:imgSum

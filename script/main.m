@@ -14,9 +14,14 @@ srcpath='E:\Dataset\rawm1\src\';
 oripath='E:\Dataset\rawm1\ori\';
 gtpath='E:\Dataset\rawm1\gt\';
 visualpath='E:\Dataset\rawm1\visualization\';
-write_class_flag = 1;
-write_visual_flag = 0;
-resize_rate=0.25;
+classpath='E:\Dataset\rawm1\gt_class\';
+
+visual_mode = 0; %是否运行此脚本
+visual_resizerate=0.25; %对于原图可视化时间过长，可以resize较小尺寸看效果
+visual_writemode = 0; %是否要保存visualization的结果
+split_mode = 1; %是否运行此脚本
+split_visualmode = 0;  %是否可视化
+
 %%
 listing = dir([srcpath '*.JPG']);
 imgSum = length(listing);
@@ -31,10 +36,13 @@ for imgNum = 1:imgSum
     imgGT_uri = [gtpath strrep(listing(imgNum).name,'.JPG','.png')];
     
     imgVIS_uri = [visualpath strrep(listing(imgNum).name,'.JPG','_visual_gt.png')];
+    
+    imgCLASS_uri = [classpath strrep(listing(imgNum).name,'.JPG','')];
+    
     if length(size(imgB))==3
         imgB = rgb2gray(imgB);
     end
-    [m n] = size(imgB);
+    [m, n] = size(imgB);
     %----------------------------------------%
     %{
     %convert rgb to logical
@@ -93,5 +101,10 @@ for imgNum = 1:imgSum
     end
     imwrite(imgGT,imgGT_uri);
     %----------------------------------------%
-    gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri,write_class_flag,write_visual_flag, resize_rate);
+    if visual_mode
+        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri,visual_writemode, visual_resizerate);
+    end
+    if split_mode
+        gtSplit(imgGT_uri,imgCLASS_uri,split_visualmode);
+    end
 end
