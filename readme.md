@@ -1,7 +1,8 @@
 # PKU SFM Semantic Dataset(PSSD)
 
 ## 0.数据集简介
-北大4000*3000的低空航拍图像,共计288张，目前共有三个语义类。
+### 0.1 数据集简介
+北大4000*3000的低空航拍图像,共计288张(m1)，目前共有三个语义类。
 
 |语义类|gt中数值|
 |------|------|
@@ -12,9 +13,14 @@
 目前数据集还在构建中，之后会考虑加入更多的语义类。
 
 *数据集示例：*
-
 ![原图](img/DJI_0285.JPG)
 ![visual_gt](img/DJI_0285_visual_gt.png)
+
+### 0.2 下载链接
+[点此下载未分类数据](https://pan.baidu.com/s/1sbDrPlgH5SRNjJgHc4AqTA)
+[点此下载分train、val、test的数据](https://pan.baidu.com/s/15DvvM0AxWiNIHcyTRrhtcA)
+
+
 ## 1.标注规范
 ### 1.0  树
 - 1、 进入photo shop，按下alt+F9打开动作菜单，载入动作tree.atn
@@ -28,7 +34,7 @@
 *标注结果示例：*
 ![树](img/DJI_0285_t.png)
 
-**[点此查看ps操作](tree.pdf)**
+**[点此查看更详细的ps操作](tree.pdf)**
 
 ### 1.1 建筑
 - 1、 新建空白图层，通过多边形套索，选取每个建筑，将其填充为黑色
