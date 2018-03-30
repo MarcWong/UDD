@@ -1,44 +1,42 @@
 # PKU SFM Semantic Dataset(PSSD)
 
-## 0.Dataset
-### 0.1 Dataset Overview
+## 0.数据集简介
+### 0.1 数据集简介
 北大4000*3000的低空航拍图像,共计288张(m1)，目前共有三个语义类。
 
-**Class Definitions**
-
-|Class|Gt Label|
+|语义类|gt中数值|
 |------|------|
-|Tree  |  0   |
-|Building |  1   |
-|Ground  |  2   |
+|树木  |  0   |
+|建筑  |  1   |
+|地面  |  2   |
 
-now the 3 classes Dataset is on air. See Download Link below.
+目前数据集还在构建中，之后会考虑加入更多的语义类。
 
 *数据集示例：*
-![src image](img/DJI_0285.JPG)
-![visualization of gt](img/DJI_0285_visual_gt.png)
+![原图](img/DJI_0285.JPG)
+![visual_gt](img/DJI_0285_visual_gt.png)
 
-### 0.2 Download Link
+### 0.2 下载链接
 [m1-288.rar](https://pan.baidu.com/s/1sbDrPlgH5SRNjJgHc4AqTA)
 [m1-train200-val40-test48.rar](https://pan.baidu.com/s/15DvvM0AxWiNIHcyTRrhtcA)
 
 
-## 1.Labeling Policy (instruction included)
-### 1.0  Tree
-- 1、 enter photo shop，press alt+F9 to open Action menu，load action script tree.atn
-![selection](img/action.png)
-- 2、 open the src url, and press CTRL+F2，a raw mask of tree would be generated
-![selection](img/selection.png)
+## 1.标注规范
+### 1.0  树
+- 1、 进入photo shop，按下alt+F9打开动作菜单，载入动作tree.atn
+![选取树](img/action.png)
+- 2、 打开原图像后按下CTRL+F2，这时会自动选出绿色区域
+![选取树](img/selection.png)
 
-- 3、 adjust the selected area by hand(lasso is recommended, just press shift/alt and drag the mouse)
-- 4、 then press CTRL+F3 to generate bitmap, save it by "_t.png" suffix，"DJI_0285_t.png",e.g.
+- 3、 对框选区域进行微调，选择套索工具，按住shift拖动鼠标是将区域加入选择，按住alt拖动鼠标是将区域去除选择
+- 4、 按下CTRL+F3,生成位图，保存为原文件名+"_t.png"，例如"DJI_0285_t.png"
 
-*Annotation example*
-![tree](img/DJI_0285_t.png)
+*标注结果示例：*
+![树](img/DJI_0285_t.png)
 
-**[Chinese version of annotation instruction](tree.pdf)**
+**[点此查看更详细的ps操作](tree.pdf)**
 
-### 1.1 Building
+### 1.1 建筑
 - 1、 新建空白图层，通过多边形套索，选取每个建筑，将其填充为黑色
 - 2、 所有建筑标注完成后，点击图像->模式->灰度，再点击图像->模式->位图，选择"50%阈值"，生成位图，保存为原文件名+"_b.png"，例如"DJI_0285_b.png"
 
