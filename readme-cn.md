@@ -18,8 +18,7 @@
 ![visual_gt](img/DJI_0285_visual_gt.png)
 
 ### 0.2 下载链接
-[m1-288.rar](https://pan.baidu.com/s/1sbDrPlgH5SRNjJgHc4AqTA)
-[m1-train200-val40-test48.rar](https://pan.baidu.com/s/15DvvM0AxWiNIHcyTRrhtcA)
+This Dataset is only for non-commercial use. Please contact **yaowang95@pku.edu.cn** for further information.
 
 
 ## 1.标注规范
