@@ -1,3 +1,4 @@
+# 此文件已经停止更新，请移步[readme.md](readme.md)
 # PKU SFM Semantic Dataset(PSSD)
 
 ## 0.数据集简介
