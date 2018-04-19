@@ -18,6 +18,30 @@ This is a collection of drone image Dataset collected at Peking University using
 |  Vehicle |   3    |_v.png|
 |  Other   |  255   | N/A  |
 
+<div style="display: flex;">
+    <div>
+    Vegetation
+    <div style="width:40px;height:20px;background-color:rgb(0,255,0);"></div>
+    </div>
+    <div>
+    Building
+    <div style="width:40px;height:20px;background-color:rgb(255,0,0);"></div>
+    </div>
+    <div>
+    Water
+    <div style="width:40px;height:20px;background-color:rgb(0,0,255);"></div>
+    </div>
+    <div>
+    Vehicle
+    <div style="width:40px;height:20px;background-color:rgb(64,0,128);"></div>
+    </div>
+    <div>
+    Other
+    <div style="width:40px;height:20px;background-color:rgb(128,128,128);"></div>
+    </div>
+</div>
+
+
 now the 3 classes Dataset is on air(Vegetation+Building+Other). See Download Link below.
 
 ### 0.2 Download Link
