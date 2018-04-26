@@ -10,13 +10,14 @@ This is a collection of drone image Dataset collected at Peking University using
 
 **Class Definitions**
 
-|   Class  |Gt Label|Suffix|
-|----------|--------|------|
-|Vegetation|   0    |_t.png|
-| Building |   1    |_b.png|
-|  Water   |   2    |_w.png|
-|  Vehicle |   3    |_v.png|
-|  Other   |  255   | N/A  |
+|   Class  |Gt Label|   RGB   |Suffix|
+|----------|--------|---------|------|
+|Vegetation|   0    |(0,255,0)|_t.png|
+| Building |   1    |(255,0,0)|_b.png|
+|  Water   |   2    |(0,0,255)|_w.png|
+|  Vehicle |   3    |(64,0,128)|_v.png|
+|  Other   |  255   |(128,128,128)| N/A |
+
 
 <div style="display: flex;">
     <div>
