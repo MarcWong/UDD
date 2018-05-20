@@ -2,7 +2,7 @@
 
 ## 0.Dataset
 ### 0.1 Dataset Overview
-This is a collection of drone image Dataset collected at Peking University using Huludao city image as a supplyment.
+This is a collection of drone image Dataset collected at Peking University using Huludao city, Henan University drone image as a supplement.
 
 *example of PSSD：*
 ![src image](img/DJI_0285.JPG)
@@ -48,7 +48,7 @@ now the 3 classes Dataset is on air(Vegetation+Building+Other). See Download Lin
 ### 0.2 Download Link
 This Dataset is only for non-commercial use. Please contact **yaowang95@pku.edu.cn** for further information.
 
-### 0.3 Constuction on the way
+### 0.3 Construction on the way
 We are still calling volunteers to build our Dataset. Please contact **yaowang95@pku.edu.cn** to join us!
 
 - Unlabeled Data Download Link Here:
@@ -74,10 +74,11 @@ We are still calling volunteers to build our Dataset. Please contact **yaowang95
 |[PSSD-17](https://pan.baidu.com/s/1LOSUwLQOEvd_WnGPzYxBdQ)|     20      |  PKU  | done |
 |[PSSD-18](https://pan.baidu.com/s/1PfADkgzwSWGulCddMkYuyg)|     20      |  PKU  | unlabeled |
 |[PSSD-19](https://pan.baidu.com/s/1fxl1TU79l-IMsywgPeDw2A)|     20      |  PKU  | unlabeled |
+|[PSSD-20]()|     25      |  PKU  | done |
 
 ## 1.Labeling Policy (instruction included)
 ### 1.0 Vegetation(Tree+Grass)
-- 1. enter photo shop，press alt+F9 to open Action menu，load action script tree.atn
+- 1. enter photo shop，press alt+F9 to open Action menu，load action script "tree.atn"
 ![selection](img/action.png)
 - 2. open the src url, and press CTRL+F2，a raw mask of tree would be generated
 ![selection](img/selection.png)
@@ -97,7 +98,7 @@ We are still calling volunteers to build our Dataset. Please contact **yaowang95
 *example of annotated result*
 ![Building](img/DJI_0285_b.png)
 
-### 1.2 Other classess
+### 1.2 Other classes
 - 1. After filled ROI with black, press CTRL+F3 to generate bitmap. Remember to save it by suffix(see **Class Definitions** above)
 
 
@@ -107,7 +108,7 @@ We are still calling volunteers to build our Dataset. Please contact **yaowang95
 
 **/gt**  ```ground truth```
 
-**/gt_class** ```groundtruth splited by classes```
+**/gt_class** ```groundtruth split by classes```
 
 **/ori**  ```annotation raw result(annotated '_t.png' / '_b.png' are all here)```
 
@@ -117,7 +118,7 @@ you can name your directories arbitrarily. Just keep it corresponds to envs in m
 ```
 
 
-## 3. Scirpts
+## 3. Scripts
 
 - ### [main.m](script/main.m)
 Processing with raw annotated result. You can DIY your ground truth label here.
@@ -148,5 +149,9 @@ After running main.m, you can see the visualization result in**/visualization** 
 view_mode = 1; % 0 for automatic, 1 for manual
 ```
 
+- ### [writeTxt.py](script/tools/writeTxt.py)
+run this to generate train.txt，val.txt for tensorpack
+
+
 ## 4. **Acknowledgements**
-Sincerely tribute to all companions contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*Yao Wang(王尧)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*。
+Sincerely tribute to all companions contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*Yao Wang(王尧)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*。

@@ -69,6 +69,7 @@
 |[PSSD-17](https://pan.baidu.com/s/1LOSUwLQOEvd_WnGPzYxBdQ)|     20      |  PKU  |顾友鹏，已完成|
 |[PSSD-18](https://pan.baidu.com/s/1PfADkgzwSWGulCddMkYuyg)|     20      |  PKU  | ___ |
 |[PSSD-19](https://pan.baidu.com/s/1fxl1TU79l-IMsywgPeDw2A)|     20      |  PKU  | ___ |
+|[PSSD-20]()|     25      |  PKU  | 王旭普、王尧、吴有堃，已完成 |
 
 ## 1.标注规范
 ### 1.0 植被(树+草地)
@@ -140,5 +141,8 @@ split_visualmode = 0;  %是否可视化
 view_mode = 1; % 0 automatic, 1 manual
 ```
 
+- ### [writeTxt.py](script/tools/writeTxt.py)
+使用此函数来生成train.txt，val.txt供训练使用
+
 ## 4. ***致谢***
-感谢对数据集构建做出贡献的朋友们(排名不分先后): 邓枭、顾友鹏、郭健元、侯忱、金朝、宋博宁、王尧、文佑尔、姚洋、易康睿、周昊天。
+感谢对数据集构建做出贡献的朋友们(排名不分先后): 邓枭、顾友鹏、郭健元、侯忱、金朝、宋博宁、王尧、文佑尔、姚洋、易康睿、周昊天、王旭普、吴有堃。
