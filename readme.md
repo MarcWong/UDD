@@ -1,10 +1,10 @@
-# PKU SFM Semantic Dataset(PSSD)
+# Urban Drone Dataset(UDD)
 
 ## 0.Dataset
 ### 0.1 Dataset Overview
-This is a collection of drone image Dataset collected at Peking University using Huludao city, Henan University drone image as a supplement.
+This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
 
-*example of PSSD：*
+*example of UDD：*
 ![src image](img/DJI_0285.JPG)
 ![visualization of gt](img/DJI_0285_visual_gt.png)
 
@@ -50,31 +50,6 @@ This Dataset is only for non-commercial use. Please contact **yaowang95@pku.edu.
 
 ### 0.3 Construction on the way
 We are still calling volunteers to build our Dataset. Please contact **yaowang95@pku.edu.cn** to join us!
-
-- Unlabeled Data Download Link Here:
-
-|                         Name                  | amount of images |  src  |Process|
-|----------------------------------------------------------|-------------|-------|------|
-|[PSSD-1](https://pan.baidu.com/s/1Ak4FTnbDxMQP8UvKZ0h3IQ) |     20      |Huludao| done |
-|[PSSD-2](https://pan.baidu.com/s/17fDqGTtEZMvRnKHg8wO_SQ) |     20      |Huludao| assigned |
-|[PSSD-3](https://pan.baidu.com/s/19ybix4957pQSO8HnQzPr2g) |     20      |Huludao| assigned |
-|[PSSD-4](https://pan.baidu.com/s/1dXx1nFfAEKkwwVsMjrQkvA) |     20      |Huludao| done |
-|[PSSD-5](https://pan.baidu.com/s/1EpZqXKEvLOQpbszwj7azmg) |     20      |Huludao| assigned |
-|[PSSD-6](https://pan.baidu.com/s/1AlH62iZWqzOzuJ5DDeB3pQ) |     13      |Huludao| assigned |
-|[PSSD-7](https://pan.baidu.com/s/1Qa4vOgikZpJ7CNYWb0CUJw) |     20      |  PKU  | unlabeled |
-|[PSSD-8](https://pan.baidu.com/s/1vPMTfVWqdRdcWMNRQ6Q4Rw) |     20      |  PKU  | assigned |
-|[PSSD-9](https://pan.baidu.com/s/14pki8WTWziBkwI9_odIsiw) |     20      |  PKU  | unlabeled |
-|[PSSD-10](https://pan.baidu.com/s/1fJgruIR_5B5sH2gBlX56mw)|     20      |  PKU  | done |
-|[PSSD-11](https://pan.baidu.com/s/1EuWtiqa8Vkz6BwnKSfgrlg)|     25      |  PKU  | assigned |
-|[PSSD-12](https://pan.baidu.com/s/1uZxnVgXWbPGdJSzMQu8_kw)|     20      |  PKU  | unlabeled |
-|[PSSD-13](https://pan.baidu.com/s/1G5yLRDEkLPlQQGqLHALXeA)|     20      |  PKU  | unlabeled |
-|[PSSD-14](https://pan.baidu.com/s/1cWG1kpwaZyrFUqrQEN9Nhw)|     20      |  PKU  | unlabeled |
-|[PSSD-15](https://pan.baidu.com/s/1UtAk8O3RHuBDsBUvyHpYYw)|     20      |  PKU  | unlabeled |
-|[PSSD-16](https://pan.baidu.com/s/1TzK8-8oTzLqnCc-us7dKdg)|     20      |  PKU  | unlabeled |
-|[PSSD-17](https://pan.baidu.com/s/1LOSUwLQOEvd_WnGPzYxBdQ)|     20      |  PKU  | done |
-|[PSSD-18](https://pan.baidu.com/s/1PfADkgzwSWGulCddMkYuyg)|     20      |  PKU  | unlabeled |
-|[PSSD-19](https://pan.baidu.com/s/1fxl1TU79l-IMsywgPeDw2A)|     20      |  PKU  | unlabeled |
-|[PSSD-20]()|     25      |  PKU  | done |
 
 ## 1.Labeling Policy (instruction included)
 ### 1.0 Vegetation(Tree+Grass)
