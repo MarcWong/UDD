@@ -41,7 +41,14 @@
 </div>
 
 ### 0.2 下载链接
-本数据集仅供非商业用途，如有需要获取，请联系**yaowang95@pku.edu.cn**
+本数据集仅供非商业用途使用。
+
+- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
+(三维重建数据集)
+
+- [UDD](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
+(语义分割模型)
+
 
 ### 0.3 数据集构建
 欢迎志愿者们加入构建数据集的工作中，详情请联系**yaowang95@pku.edu.cn**

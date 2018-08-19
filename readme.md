@@ -46,7 +46,14 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 now the 3 classes Dataset is on air(Vegetation+Building+Other). See Download Link below.
 
 ### 0.2 Download Link
-This Dataset is only for non-commercial use. Please contact **yaowang95@pku.edu.cn** for further information.
+This Dataset is only for non-commercial use. 
+
+- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
+(3d reconstruction dataset)
+
+- [UDD](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
+(trained model)
+
 
 ### 0.3 Construction on the way
 We are still calling volunteers to build our Dataset. Please contact **yaowang95@pku.edu.cn** to join us!
