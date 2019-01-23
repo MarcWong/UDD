@@ -42,16 +42,14 @@
 
 ### 0.2 下载链接
 本数据集仅供非商业用途使用。
-
-- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
-(三维重建数据集)
 
-- [UDD](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
-(语义分割模型)
+- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
+(test 数据集)
 
+- [pretained model](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
+(tensorflow预训练模型) 
 
-### 0.3 数据集构建
-欢迎志愿者们加入构建数据集的工作中，详情请联系**yaowang95@pku.edu.cn**
+- [UDD](https://drive.google.com/file/d/1JzW1DoDQ9woyVqPKO5brZU4mLtcErw5n/view?usp=sharing)(train + validation 数据集)
 
 ## 1.标注规范
 ### 1.0 植被(树+草地)

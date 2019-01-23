@@ -48,15 +48,13 @@ now the 3 classes Dataset is on air(Vegetation+Building+Other). See Download Lin
 ### 0.2 Download Link
 This Dataset is only for non-commercial use. 
 
-- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
-(3d reconstruction dataset)
+- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
+(test dataset)
 
-- [UDD](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
-(trained model)
+- [pretrained model](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
+(trained by tensorflow on UDD)
 
-
-### 0.3 Construction on the way
-We are still calling volunteers to build our Dataset. Please contact **yaowang95@pku.edu.cn** to join us!
+- [UDD](https://drive.google.com/file/d/1JzW1DoDQ9woyVqPKO5brZU4mLtcErw5n/view?usp=sharing)(train + validation dataset)
 
 ## 1.Labeling Policy (instruction included)
 ### 1.0 Vegetation(Tree+Grass)
