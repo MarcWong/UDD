@@ -58,14 +58,14 @@ function out = gtVisual(gt_uri, src_uri, output_uri,mask_or_color, resize_rate, 
                         visualI(i,j,1) = 255;
                         visualI(i,j,2) = 0;
                         visualI(i,j,3) = 0;
-                    elseif gtI(i,j) == 2 %water  blue
+                    elseif gtI(i,j) == 2 %road  blue
                         visualI(i,j,1) = 0;
                         visualI(i,j,2) = 0;
                         visualI(i,j,3) = 255;
-                     elseif gtI(i,j) == 3 %car  purple
-                        visualI(i,j,1) = 64;
-                        visualI(i,j,2) = 0;
-                        visualI(i,j,3) = 128;
+                     elseif gtI(i,j) == 3 %vehicle  yellow
+                        visualI(i,j,1) = 255;
+                        visualI(i,j,2) = 255;
+                        visualI(i,j,3) = 0;
                      else
                         visualI(i,j,1) = 128;
                         visualI(i,j,2) = 128;

@@ -1,29 +1,30 @@
 %%
 %label definition
 %----------------------------------------%
-% 0: vegetation
-% 1: building
-% 2: water
-% 3: vehicle
-% 255: other
+% 0: vegetation 植被 imgT 后缀：_t.png
+% 1: building 建筑 imgB 后缀：_b.png
+% 2: road 道路 imgR 后缀：_r.png
+% 3: vehicle 车辆 imgV 后缀：_v.png
+% 255: other 其他
 %
 %----------------------------------------%
 
 %%
 %env setup
-srcpath='E:\Dataset\rawPSSD\src\';
-oripath='E:\Dataset\rawPSSD\ori\';
-gtpath='E:\Dataset\rawPSSD\gt\';
-visualpath='E:\Dataset\rawPSSD\visualization\';
-classpath='E:\Dataset\rawPSSD\gt_class\';
+path='E:\Dataset\rawWKGS\';
+srcpath=[path 'src\'];
+oripath=[path 'ori\'];
+gtpath=[path 'gt\'];
+visualpath=[path 'visualization\'];
+classpath=[path 'gt_class\'];
 
 visual_mode = 1; %是否运行visual脚本
 visual_resizerate=0.25; %对于原图可视化时间过长，可以resize较小尺寸看效果
 mask_or_color = 1; %mask储存模式：1为原图像上的mask，0为只有色块
-class_number = 3; %可分为3类/5类
-split_mode = 1; %是否运行split脚本
+class_number = 5; %可分为3类/5类
+split_mode = 0; %是否运行split脚本
 split_visualmode = 0;  %是否可视化
-src_prefix = '.jpg';
+src_prefix = '.JPG';
 
 %%
 listing = dir([srcpath '*' src_prefix]);
@@ -33,7 +34,7 @@ for imgNum = 1:imgSum
     imgB_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_b.png')];
     imgT_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_t.png')];
     imgV_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_v.png')];
-    imgW_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_w.png')];
+    imgR_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_r.png')];
     
     imgGT_uri = [gtpath strrep(listing(imgNum).name,src_prefix,'.png')];
    
@@ -67,21 +68,21 @@ for imgNum = 1:imgSum
         imgT = imresize(imgT,[m n]);
         imgGT = imgGT + uint8(~imgT .* 2); % tree
     end
+    if exist(imgR_uri,'file')
+        imgW = imread(imgR_uri);
+        if length(size(imgW))==3
+            imgW = rgb2gray(imgW);
+        end
+        imgW = imresize(imgW,[m n]);
+        imgGT = imgGT + uint8(~imgW .* 4); % road
+    end
     if exist(imgV_uri,'file')
         imgV = imread(imgV_uri);
         if length(size(imgV))==3
             imgV = rgb2gray(imgV);
         end
         imgV = imresize(imgV,[m n]);
-        imgGT = imgGT + uint8(~imgV .* 8); % car
-    end
-    if exist(imgW_uri,'file')
-        imgW = imread(imgW_uri);
-        if length(size(imgW))==3
-            imgW = rgb2gray(imgW);
-        end
-        imgW = imresize(imgW,[m n]);
-        imgGT = imgGT + uint8(~imgW .* 4); % water
+        imgGT = imgGT + uint8(~imgV .* 8); % vehicle
     end
     
     %----------------------------------------%
@@ -130,32 +131,28 @@ for imgNum = 1:imgSum
     if class_number == 3
         for i = 1:m
            for j = 1:n
-               if imgGT(i,j) > 7 
-                   imgGT(i,j) = 2;%vehicle
-               elseif imgGT(i,j) > 3 
-                   imgGT(i,j) = 2;%water
-               elseif imgGT(i,j) > 1 
-                   imgGT(i,j) = 0;%vegetation
-               elseif imgGT(i,j) > 0 
-                   imgGT(i,j) = 1;%building
+               if imgGT(i,j) > 1
+                   imgGT(i,j) = 0; %vegetation
+               elseif imgGT(i,j) > 0
+                   imgGT(i,j) = 1; %building
                else
-                   imgGT(i,j) = 2;%other
+                   imgGT(i,j) = 2; %other
                end
            end
         end
     else %class_number == 5
         for i = 1:m
            for j = 1:n
-               if imgGT(i,j) > 7 
-                   imgGT(i,j) = 3;%vehicle
-               elseif imgGT(i,j) > 3 
-                   imgGT(i,j) = 2;%water
-               elseif imgGT(i,j) > 1 
-                   imgGT(i,j) = 0;%vegetation
-               elseif imgGT(i,j) > 0 
-                   imgGT(i,j) = 1;%building
+               if imgGT(i,j) > 7
+                   imgGT(i,j) = 3; %vehicle
+               elseif imgGT(i,j) > 3
+                   imgGT(i,j) = 2; %road
+               elseif imgGT(i,j) > 1
+                   imgGT(i,j) = 0; %vegetation
+               elseif imgGT(i,j) > 0
+                   imgGT(i,j) = 1; %building
                else
-                   imgGT(i,j) = 255;%other
+                   imgGT(i,j) = 255; %other
                end
            end
         end
