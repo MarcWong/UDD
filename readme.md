@@ -1,10 +1,10 @@
-# PKU SFM Semantic Dataset(PSSD)
+# Urban Drone Dataset(UDD)
 
 ## 0.Dataset
 ### 0.1 Dataset Overview
-This is a collection of drone image Dataset collected at Peking University using Huludao city image as a supplyment.
+This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
 
-*example of PSSD：*
+*example of UDD：*
 ![src image](img/DJI_0285.JPG)
 ![visualization of gt](img/DJI_0285_visual_gt.png)
 
@@ -46,38 +46,19 @@ This is a collection of drone image Dataset collected at Peking University using
 now the 3 classes Dataset is on air(Vegetation+Building+Other). See Download Link below.
 
 ### 0.2 Download Link
-This Dataset is only for non-commercial use. Please contact **yaowang95@pku.edu.cn** for further information.
+This Dataset is only for non-commercial use. 
 
-### 0.3 Constuction on the way
-We are still calling volunteers to build our Dataset. Please contact **yaowang95@pku.edu.cn** to join us!
+- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
+(test dataset)
 
-- Unlabeled Data Download Link Here:
+- [pretrained model](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
+(trained by tensorflow on UDD)
 
-|                         Name                  | amount of images |  src  |Process|
-|----------------------------------------------------------|-------------|-------|------|
-|[PSSD-1](https://pan.baidu.com/s/1Ak4FTnbDxMQP8UvKZ0h3IQ) |     20      |Huludao| done |
-|[PSSD-2](https://pan.baidu.com/s/17fDqGTtEZMvRnKHg8wO_SQ) |     20      |Huludao| assigned |
-|[PSSD-3](https://pan.baidu.com/s/19ybix4957pQSO8HnQzPr2g) |     20      |Huludao| assigned |
-|[PSSD-4](https://pan.baidu.com/s/1dXx1nFfAEKkwwVsMjrQkvA) |     20      |Huludao| done |
-|[PSSD-5](https://pan.baidu.com/s/1EpZqXKEvLOQpbszwj7azmg) |     20      |Huludao| assigned |
-|[PSSD-6](https://pan.baidu.com/s/1AlH62iZWqzOzuJ5DDeB3pQ) |     13      |Huludao| assigned |
-|[PSSD-7](https://pan.baidu.com/s/1Qa4vOgikZpJ7CNYWb0CUJw) |     20      |  PKU  | unlabeled |
-|[PSSD-8](https://pan.baidu.com/s/1vPMTfVWqdRdcWMNRQ6Q4Rw) |     20      |  PKU  | assigned |
-|[PSSD-9](https://pan.baidu.com/s/14pki8WTWziBkwI9_odIsiw) |     20      |  PKU  | unlabeled |
-|[PSSD-10](https://pan.baidu.com/s/1fJgruIR_5B5sH2gBlX56mw)|     20      |  PKU  | done |
-|[PSSD-11](https://pan.baidu.com/s/1EuWtiqa8Vkz6BwnKSfgrlg)|     25      |  PKU  | assigned |
-|[PSSD-12](https://pan.baidu.com/s/1uZxnVgXWbPGdJSzMQu8_kw)|     20      |  PKU  | unlabeled |
-|[PSSD-13](https://pan.baidu.com/s/1G5yLRDEkLPlQQGqLHALXeA)|     20      |  PKU  | unlabeled |
-|[PSSD-14](https://pan.baidu.com/s/1cWG1kpwaZyrFUqrQEN9Nhw)|     20      |  PKU  | unlabeled |
-|[PSSD-15](https://pan.baidu.com/s/1UtAk8O3RHuBDsBUvyHpYYw)|     20      |  PKU  | unlabeled |
-|[PSSD-16](https://pan.baidu.com/s/1TzK8-8oTzLqnCc-us7dKdg)|     20      |  PKU  | unlabeled |
-|[PSSD-17](https://pan.baidu.com/s/1LOSUwLQOEvd_WnGPzYxBdQ)|     20      |  PKU  | done |
-|[PSSD-18](https://pan.baidu.com/s/1PfADkgzwSWGulCddMkYuyg)|     20      |  PKU  | unlabeled |
-|[PSSD-19](https://pan.baidu.com/s/1fxl1TU79l-IMsywgPeDw2A)|     20      |  PKU  | unlabeled |
+- [UDD](https://drive.google.com/file/d/1JzW1DoDQ9woyVqPKO5brZU4mLtcErw5n/view?usp=sharing)(train + validation dataset)
 
 ## 1.Labeling Policy (instruction included)
 ### 1.0 Vegetation(Tree+Grass)
-- 1. enter photo shop，press alt+F9 to open Action menu，load action script tree.atn
+- 1. enter photo shop，press alt+F9 to open Action menu，load action script "tree.atn"
 ![selection](img/action.png)
 - 2. open the src url, and press CTRL+F2，a raw mask of tree would be generated
 ![selection](img/selection.png)
@@ -97,7 +78,7 @@ We are still calling volunteers to build our Dataset. Please contact **yaowang95
 *example of annotated result*
 ![Building](img/DJI_0285_b.png)
 
-### 1.2 Other classess
+### 1.2 Other classes
 - 1. After filled ROI with black, press CTRL+F3 to generate bitmap. Remember to save it by suffix(see **Class Definitions** above)
 
 
@@ -107,7 +88,7 @@ We are still calling volunteers to build our Dataset. Please contact **yaowang95
 
 **/gt**  ```ground truth```
 
-**/gt_class** ```groundtruth splited by classes```
+**/gt_class** ```groundtruth split by classes```
 
 **/ori**  ```annotation raw result(annotated '_t.png' / '_b.png' are all here)```
 
@@ -117,7 +98,7 @@ you can name your directories arbitrarily. Just keep it corresponds to envs in m
 ```
 
 
-## 3. Scirpts
+## 3. Scripts
 
 - ### [main.m](script/main.m)
 Processing with raw annotated result. You can DIY your ground truth label here.
@@ -148,5 +129,9 @@ After running main.m, you can see the visualization result in**/visualization** 
 view_mode = 1; % 0 for automatic, 1 for manual
 ```
 
+- ### [writeTxt.py](script/tools/writeTxt.py)
+run this to generate train.txt，val.txt for tensorpack
+
+
 ## 4. **Acknowledgements**
-Sincerely tribute to all companions contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*Yao Wang(王尧)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*。
+Sincerely tribute to all companions contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*Yao Wang(王尧)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*。
