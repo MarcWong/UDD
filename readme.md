@@ -5,8 +5,8 @@
 This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
 
 *example of UDD：*
-![src image](img/DJI_0285.JPG)
-![visualization of gt](img/DJI_0285_visual_gt.png)
+![visual_color](img/DJI_0627_visual_color.png)
+![visual_mask](img/DJI_0627_visual_mask.png)
 
 **Class Definitions**
 
@@ -14,9 +14,9 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 |----------|--------|---------|------|
 |Vegetation|   0    |(0,255,0)|_t.png|
 | Building |   1    |(255,0,0)|_b.png|
-|  Water   |   2    |(0,0,255)|_w.png|
-|  Vehicle |   3    |(64,0,128)|_v.png|
-|  Other   |  255   |(128,128,128)| N/A |
+|  Road   |   2    |(0,0,255)|_r.png|
+|  Vehicle |   3    |(128,128,0)|_v.png|
+|  Other   |  4   |(128,128,128)| N/A |
 
 
 <div style="display: flex;">
@@ -29,12 +29,12 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
     <div style="width:40px;height:20px;background-color:rgb(255,0,0);"></div>
     </div>
     <div>
-    Water
+    Road
     <div style="width:40px;height:20px;background-color:rgb(0,0,255);"></div>
     </div>
     <div>
     Vehicle
-    <div style="width:40px;height:20px;background-color:rgb(64,0,128);"></div>
+    <div style="width:40px;height:20px;background-color:rgb(128,128,0);"></div>
     </div>
     <div>
     Other
@@ -90,7 +90,7 @@ This Dataset is only for non-commercial use.
 
 **/gt_class** ```groundtruth split by classes```
 
-**/ori**  ```annotation raw result(annotated '_t.png' / '_b.png' are all here)```
+**/ori**  ```annotation raw result(annotated '_t.png', '_b.png', etc. are all here)```
 
 **/visualization** ```visualization result```
 ```
@@ -107,17 +107,17 @@ Processing with raw annotated result. You can DIY your ground truth label here.
 
 *parameters*：
 ```
-visual_mode = 0; %1 to run this script
-visual_resizerate=0.25; %resize to accelerate
-visual_writemode = 0; %1 to save visualization result
+visual_mode = 0; % 1 to run this script
+visual_resizerate=0.25; % resize to accelerate
+visual_writemode = 0; % 1 to save visualization result
 ```
 
 - ### [gtSplit.m(function, called by main.m)](script/gtSplit.m)
 
 *parameters*：
 ```
-split_mode = 1; %1 to run this script
-split_visualmode = 0;  %1 to visualize
+split_mode = 1; % 1 to run this script
+split_visualmode = 0;  % 1 to visualize
 ```
 
 - ### [visualization.m](script/visualization.m)
@@ -130,8 +130,8 @@ view_mode = 1; % 0 for automatic, 1 for manual
 ```
 
 - ### [writeTxt.py](script/tools/writeTxt.py)
-run this to generate train.txt，val.txt for tensorpack
+run this to prepare ```train.txt，val.txt``` for training in [tensorpack](https://github.com/MarcWong/tensorpack).
 
 
 ## 4. **Acknowledgements**
-Sincerely tribute to all companions contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*Yao Wang(王尧)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*。
+Sincerely tribute to all companions who contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Wei(朱彤葳)*、*Zebin Wang(王泽斌)*。

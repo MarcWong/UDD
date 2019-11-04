@@ -2,20 +2,20 @@
 
 ## 0. 城市场景无人机数据集
 ### 0.1 概览
-本数据集由北京大学、河南大学、葫芦岛、沧州无人机航拍图像构成，共计160张训练集，45张测试集。
+本数据集由北京大学、河南大学、葫芦岛、沧州等多地点的无人机航拍图像构成。
 
 *样例图片*
-![src image](img/DJI_0285.JPG)
-![visualization of gt](img/DJI_0285_visual_gt.png)
+![visual_color](img/DJI_0627_visual_color.png)
+![visual_mask](img/DJI_0627_visual_mask.png)
 
 **语义类**
 |  类别  |Gt 标签|   RGB   | 后缀 |
 |-------|-------|----------|------|
 |  植被  |   0   |(0,255,0)|_t.png|
 |  建筑  |   1   |(255,0,0)|_b.png|
-|  水面  |   2   |(0,0,255)|_w.png|
-|  车辆  |   3   |(64,0,128)|_v.png|
-|  其他  |  255  |(128,128,128)| N/A |
+|  道路  |   2   |(0,0,255)|_r.png|
+|  车辆  |   3   |(128,128,0)|_v.png|
+|  其他  |   4   |(128,128,128)| N/A |
 
 <div style="display: flex;">
     <div>
@@ -27,12 +27,12 @@
     <div style="width:40px;height:20px;background-color:rgb(255,0,0);"></div>
     </div>
     <div>
-    水面
+    道路
     <div style="width:40px;height:20px;background-color:rgb(0,0,255);"></div>
     </div>
     <div>
     车辆
-    <div style="width:40px;height:20px;background-color:rgb(64,0,128);"></div>
+    <div style="width:40px;height:20px;background-color:rgb(128,128,0);"></div>
     </div>
     <div>
     其他
@@ -122,7 +122,7 @@ view_mode = 1; % 0 automatic, 1 manual
 ```
 
 - ### [writeTxt.py](script/tools/writeTxt.py)
-使用此函数来生成train.txt，val.txt供训练使用
+使用此函数来生成```train.txt，val.txt```供[tensorpack](https://github.com/MarcWong/tensorpack)训练使用
 
 ## 4. ***致谢***
-感谢对数据集构建做出贡献的朋友们(排名不分先后): 邓枭、顾友鹏、郭健元、侯忱、金朝、宋博宁、王尧、文佑尔、姚洋、易康睿、周昊天、王旭普、吴有堃。
+感谢对数据集构建做出贡献的朋友们(排名不分先后): *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Wei(朱彤葳)*、*Zebin Wang(王泽斌)*。
