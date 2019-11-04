@@ -35,7 +35,7 @@ function out = gtSplit(gt_uri, class_uri,debug_mode)
     end
     class_notuildingI = ~class_buildingI;
     
-    
+
     if debug_mode == 1 %visualization
         subplot(1,3,1);
         imagesc(class_treeI);

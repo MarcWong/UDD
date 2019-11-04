@@ -1,17 +1,19 @@
-%%
-%label definition
+%% Label definition
 %----------------------------------------%
 % 0: vegetation 植被 imgT 后缀：_t.png
 % 1: building 建筑 imgB 后缀：_b.png
 % 2: road 道路 imgR 后缀：_r.png
 % 3: vehicle 车辆 imgV 后缀：_v.png
-% 255: other 其他
-%
+% 4: other 其他
 %----------------------------------------%
-
-%%
-%env setup
-path='E:\Dataset\rawWKGS\';
+% 未来可能扩展的语义类
+% 两轮车 motor / bicycle
+% 行人 pedestrian
+% 运动场 pitch
+% 电线杆 pole
+%----------------------------------------%
+%% Envs setup
+path='E:\Dataset\rawUDDnew\';
 srcpath=[path 'src\'];
 oripath=[path 'ori\'];
 gtpath=[path 'gt\'];
@@ -21,12 +23,11 @@ classpath=[path 'gt_class\'];
 visual_mode = 1; %是否运行visual脚本
 visual_resizerate=0.25; %对于原图可视化时间过长，可以resize较小尺寸看效果
 mask_or_color = 1; %mask储存模式：1为原图像上的mask，0为只有色块
-class_number = 5; %可分为3类/5类
 split_mode = 0; %是否运行split脚本
 split_visualmode = 0;  %是否可视化
 src_prefix = '.JPG';
 
-%%
+%% Main function
 listing = dir([srcpath '*' src_prefix]);
 imgSum = length(listing);
 for imgNum = 1:imgSum
@@ -60,21 +61,21 @@ for imgNum = 1:imgSum
         imgB = imresize(imgB,[m n]);
         imgGT = imgGT + uint8(~imgB .* 1); % building
     end
-    if exist(imgT_uri,'file')
-        imgT = imread(imgT_uri);
-        if length(size(imgT))==3
-            imgT = rgb2gray(imgT);
-        end
-        imgT = imresize(imgT,[m n]);
-        imgGT = imgGT + uint8(~imgT .* 2); % tree
-    end
     if exist(imgR_uri,'file')
         imgW = imread(imgR_uri);
         if length(size(imgW))==3
             imgW = rgb2gray(imgW);
         end
         imgW = imresize(imgW,[m n]);
-        imgGT = imgGT + uint8(~imgW .* 4); % road
+        imgGT = imgGT + uint8(~imgW .* 2); % road
+    end
+    if exist(imgT_uri,'file')
+        imgT = imread(imgT_uri);
+        if length(size(imgT))==3
+            imgT = rgb2gray(imgT);
+        end
+        imgT = imresize(imgT,[m n]);
+        imgGT = imgGT + uint8(~imgT .* 4); % tree
     end
     if exist(imgV_uri,'file')
         imgV = imread(imgV_uri);
@@ -128,34 +129,22 @@ for imgNum = 1:imgSum
     %}
     %----------------------------------------%
     
-    if class_number == 3
-        for i = 1:m
-           for j = 1:n
-               if imgGT(i,j) > 1
-                   imgGT(i,j) = 0; %vegetation
-               elseif imgGT(i,j) > 0
-                   imgGT(i,j) = 1; %building
-               else
-                   imgGT(i,j) = 2; %other
-               end
+    
+    %class_number == 5
+    for i = 1:m
+       for j = 1:n
+           if imgGT(i,j) > 7
+               imgGT(i,j) = 3; %vehicle
+           elseif imgGT(i,j) > 3
+               imgGT(i,j) = 0; %vegetation
+           elseif imgGT(i,j) > 1
+               imgGT(i,j) = 2; %road
+           elseif imgGT(i,j) > 0
+               imgGT(i,j) = 1; %building
+           else
+               imgGT(i,j) = 4; %other
            end
-        end
-    else %class_number == 5
-        for i = 1:m
-           for j = 1:n
-               if imgGT(i,j) > 7
-                   imgGT(i,j) = 3; %vehicle
-               elseif imgGT(i,j) > 3
-                   imgGT(i,j) = 2; %road
-               elseif imgGT(i,j) > 1
-                   imgGT(i,j) = 0; %vegetation
-               elseif imgGT(i,j) > 0
-                   imgGT(i,j) = 1; %building
-               else
-                   imgGT(i,j) = 255; %other
-               end
-           end
-        end
+       end
     end
     
     % final output:
@@ -166,8 +155,8 @@ for imgNum = 1:imgSum
     imwrite(imgGT,imgGT_uri);
     %----------------------------------------%
     if visual_mode
-        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri,0, visual_resizerate, class_number);
-        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri2,1, visual_resizerate, class_number);
+        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri,0, visual_resizerate);
+        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri2,1, visual_resizerate);
     end
     if split_mode
         gtSplit(imgGT_uri,imgCLASS_uri,split_visualmode);
