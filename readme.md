@@ -43,18 +43,12 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 </div>
 
 
-now the 3 classes Dataset is on air(Vegetation+Building+Other). See Download Link below.
+now the 5 classes Dataset is on air(*Vegetation, Building, Road, Vehicle, Background*). See Download Link below.
 
 ### 0.2 Download Link
 This Dataset is only for non-commercial use. 
 
-- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
-(test dataset)
-
-- [pretrained model](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
-(trained by tensorflow on UDD)
-
-- [UDD](https://drive.google.com/file/d/1JzW1DoDQ9woyVqPKO5brZU4mLtcErw5n/view?usp=sharing)(train + validation dataset)
+- [UDD5(train, val) + Trained_Model + m1(test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
 ## 1.Labeling Policy (instruction included)
 ### 1.0 Vegetation(Tree+Grass)
