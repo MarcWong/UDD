@@ -41,15 +41,12 @@
 </div>
 
 ### 0.2 下载链接
+
+现在5类数据集已经发布（*植被，建筑，道路，车辆，背景*）请查看下方下载链接。
+
 本数据集仅供非商业用途使用。
 
-- [m1](https://pan.baidu.com/s/1hJJ0tkbxYl43Zfifp_ibYg)
-(test 数据集)
-
-- [pretained model](https://pan.baidu.com/s/1Jmb2B9_eqXvgIqoqyORIrw)
-(tensorflow预训练模型) 
-
-- [UDD](https://drive.google.com/file/d/1JzW1DoDQ9woyVqPKO5brZU4mLtcErw5n/view?usp=sharing)(train + validation 数据集)
+- [UDD5(train, val) + Trained_Model + m1(test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
 ## 1.标注规范
 ### 1.0 植被(树+草地)
