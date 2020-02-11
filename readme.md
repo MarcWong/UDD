@@ -88,7 +88,7 @@ This Dataset is only for non-commercial use.
 
 **/visualization** ```visualization result```
 ```
-you can name your directories arbitrarily. Just keep it corresponds to envs in main.m
+you can name your directories arbitrarily. Just keep them corresponded to envs in main.m
 ```
 
 
@@ -102,7 +102,7 @@ Processing with raw annotated result. You can DIY your ground truth label here.
 *parameters*：
 ```
 visual_mode = 0; % 1 to run this script
-visual_resizerate=0.25; % resize to accelerate
+visual_resizerate=0.25; % downsample to accelerate
 visual_writemode = 0; % 1 to save visualization result
 ```
 
@@ -128,4 +128,4 @@ run this to prepare ```train.txt，val.txt``` for training in [tensorpack](https
 
 
 ## 4. **Acknowledgements**
-Sincerely tribute to all companions who contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Wei(朱彤葳)*、*Zebin Wang(王泽斌)*。
+Sincerely tribute to all companions who contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Zhu(朱彤葳)*、*Zebin Wang(王泽斌)*。
