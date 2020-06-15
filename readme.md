@@ -50,6 +50,7 @@ This Dataset is only for non-commercial use.
 
 - [UDD5(train, val) + Trained_Model + m1(test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
+
 ## 1.Labeling Policy (instruction included)
 ### 1.0 Vegetation(Tree+Grass)
 - 1. enter photo shop，press alt+F9 to open Action menu，load action script "tree.atn"
@@ -127,5 +128,20 @@ view_mode = 1; % 0 for automatic, 1 for manual
 run this to prepare ```train.txt，val.txt``` for training in [tensorpack](https://github.com/MarcWong/tensorpack).
 
 
-## 4. **Acknowledgements**
+## 4.Citation
+
+If you benefit from this code, please cite our paper:
+
+```
+@inproceedings{chen2018large,
+  title={Large-scale structure from motion with semantic constraints of aerial images},
+  author={Chen, Yu and Wang, Yao and Lu, Peng and Chen, Yisong and Wang, Guoping},
+  booktitle={Chinese Conference on Pattern Recognition and Computer Vision (PRCV)},
+  pages={347--359},
+  year={2018},
+  organization={Springer}
+}
+```
+
+## 5. **Acknowledgements**
 Sincerely tribute to all companions who contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Zhu(朱彤葳)*、*Zebin Wang(王泽斌)*。
