@@ -7,13 +7,14 @@
 % 4: other 其他
 %----------------------------------------%
 % 未来可能扩展的语义类
+% 建筑类细分类 Building -> Roof + Facade 
 % 两轮车 motor / bicycle
 % 行人 pedestrian
 % 运动场 pitch
 % 电线杆 pole
 %----------------------------------------%
 %% Envs setup
-path='E:\Dataset\rawUDDnew\';
+path='G:\Dataset\rawUDDnew\';
 srcpath=[path 'src\'];
 oripath=[path 'ori\'];
 gtpath=[path 'gt\'];
@@ -23,8 +24,8 @@ classpath=[path 'gt_class\'];
 visual_mode = 1; %是否运行visual脚本
 visual_resizerate=0.25; %对于原图可视化时间过长，可以resize较小尺寸看效果
 mask_or_color = 1; %mask储存模式：1为原图像上的mask，0为只有色块
-split_mode = 0; %是否运行split脚本
-split_visualmode = 0;  %是否可视化
+split_mode = 0; %是否运行split脚本：1运行，0不运行
+split_visualmode = 0;  %是否可视化split结果：1进行可视化，0不进行可视化 
 src_prefix = '.JPG';
 
 %% Main function
@@ -59,6 +60,7 @@ for imgNum = 1:imgSum
             imgB = rgb2gray(imgB);
         end
         imgB = imresize(imgB,[m n]);
+        imgB = bwmorph(imgB,'close');
         imgGT = imgGT + uint8(~imgB .* 1); % building
     end
     if exist(imgR_uri,'file')
@@ -67,6 +69,7 @@ for imgNum = 1:imgSum
             imgW = rgb2gray(imgW);
         end
         imgW = imresize(imgW,[m n]);
+        imgW = bwmorph(imgW,'close');
         imgGT = imgGT + uint8(~imgW .* 2); % road
     end
     if exist(imgT_uri,'file')
@@ -75,6 +78,7 @@ for imgNum = 1:imgSum
             imgT = rgb2gray(imgT);
         end
         imgT = imresize(imgT,[m n]);
+        imgT = bwmorph(imgT,'close');
         imgGT = imgGT + uint8(~imgT .* 4); % tree
     end
     if exist(imgV_uri,'file')
@@ -83,6 +87,7 @@ for imgNum = 1:imgSum
             imgV = rgb2gray(imgV);
         end
         imgV = imresize(imgV,[m n]);
+        imgV = bwmorph(imgV,'close');
         imgGT = imgGT + uint8(~imgV .* 8); % vehicle
     end
     
@@ -131,28 +136,25 @@ for imgNum = 1:imgSum
     
     
     %class_number == 5
+    imgGTout = uint8(zeros(m,n)); % 0 as vegetation
     for i = 1:m
        for j = 1:n
            if imgGT(i,j) > 7
-               imgGT(i,j) = 3; %vehicle
+               imgGTout(i,j) = 3; %vehicle
            elseif imgGT(i,j) > 3
-               imgGT(i,j) = 0; %vegetation
+               imgGTout(i,j) = 0; %vegetation
            elseif imgGT(i,j) > 1
-               imgGT(i,j) = 2; %road
+               imgGTout(i,j) = 2; %road
            elseif imgGT(i,j) > 0
-               imgGT(i,j) = 1; %building
+               imgGTout(i,j) = 1; %building
            else
-               imgGT(i,j) = 4; %other
+               imgGTout(i,j) = 4; %other
            end
        end
     end
-    
+
     % final output:
-    % 3: vehicle
-    % 2: water
-    % 1: building
-    % 0: vegetation
-    imwrite(imgGT,imgGT_uri);
+    imwrite(imgGTout,imgGT_uri);
     %----------------------------------------%
     if visual_mode
         gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri,0, visual_resizerate);

@@ -11,42 +11,36 @@
 **语义类**
 |  类别  |Gt 标签|   RGB   | 后缀 |
 |-------|-------|----------|------|
-|  植被  |   0   |(0,255,0)|_t.png|
-|  建筑  |   1   |(255,0,0)|_b.png|
-|  道路  |   2   |(0,0,255)|_r.png|
-|  车辆  |   3   |(128,128,0)|_v.png|
-|  其他  |   4   |(128,128,128)| N/A |
+|  植被  |   0   |(107,142,35)|_t.png|
+|  建筑  |   1   |(70,70,70)|_b.png|
+|  道路  |   2   |(128,64,128)|_r.png|
+|  车辆  |   3   |(0,0,142)|_v.png|
+|  其他  |   4   |(0,0,0)| N/A |
 
-<div style="display: flex;">
-    <div>
-    植被
-    <div style="width:40px;height:20px;background-color:rgb(0,255,0);"></div>
-    </div>
-    <div>
-    建筑
-    <div style="width:40px;height:20px;background-color:rgb(255,0,0);"></div>
-    </div>
-    <div>
-    道路
-    <div style="width:40px;height:20px;background-color:rgb(0,0,255);"></div>
-    </div>
-    <div>
-    车辆
-    <div style="width:40px;height:20px;background-color:rgb(128,128,0);"></div>
-    </div>
-    <div>
-    其他
-    <div style="width:40px;height:20px;background-color:rgb(128,128,128);"></div>
-    </div>
-</div>
 
 ### 0.2 下载链接
 
-现在5类数据集已经发布（*植被，建筑，道路，车辆，背景*）请查看下方下载链接。
+现在UDD-5数据集已经发布（*植被，建筑，道路，车辆，背景*）请查看下方下载链接。
 
 本数据集仅供非商业用途使用。
 
-- [UDD5(train, val) + Trained_Model + m1(test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
+- [UDD-5(train, val) + Trained_Model + m1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
+
+## 引用
+
+如果UDD对您的工作有帮助，请引用我们的文章：
+
+```
+@inproceedings{chen2018large,
+  title={Large-scale structure from motion with semantic constraints of aerial images},
+  author={Chen, Yu and Wang, Yao and Lu, Peng and Chen, Yisong and Wang, Guoping},
+  booktitle={Chinese Conference on Pattern Recognition and Computer Vision (PRCV)},
+  pages={347--359},
+  year={2018},
+  organization={Springer}
+}
+```
+
 
 ## 1.标注规范
 ### 1.0 植被(树+草地)

@@ -12,43 +12,19 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 
 |   Class  |Gt Label|   RGB   |Suffix|
 |----------|--------|---------|------|
-|Vegetation|   0    |(0,255,0)|_t.png|
-| Building |   1    |(255,0,0)|_b.png|
-|  Road   |   2    |(0,0,255)|_r.png|
-|  Vehicle |   3    |(128,128,0)|_v.png|
-|  Other   |  4   |(128,128,128)| N/A |
+|Vegetation|   0    |(107,142,35)|_t.png|
+| Building |   1    |(70,70,70)|_b.png|
+|  Road    |   2    |(128,64,128)|_r.png|
+|  Vehicle |   3    |(0,0,142)|_v.png|
+|  Other   |   4    |(0,0,0) | N/A |
 
 
-<div style="display: flex;">
-    <div>
-    Vegetation
-    <div style="width:40px;height:20px;background-color:rgb(0,255,0);"></div>
-    </div>
-    <div>
-    Building
-    <div style="width:40px;height:20px;background-color:rgb(255,0,0);"></div>
-    </div>
-    <div>
-    Road
-    <div style="width:40px;height:20px;background-color:rgb(0,0,255);"></div>
-    </div>
-    <div>
-    Vehicle
-    <div style="width:40px;height:20px;background-color:rgb(128,128,0);"></div>
-    </div>
-    <div>
-    Other
-    <div style="width:40px;height:20px;background-color:rgb(128,128,128);"></div>
-    </div>
-</div>
-
-
-now the 5 classes Dataset is on air(*Vegetation, Building, Road, Vehicle, Background*). See Download Link below.
+now UDD-5 is on air(*Vegetation, Building, Road, Vehicle, Background*). See Download Link below.
 
 ### 0.2 Download Link
 This Dataset is only for non-commercial use. 
 
-- [UDD5(train, val) + Trained_Model + m1(test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
+- [UDD-5(train, val) + Trained_Model(tensorflow) + m1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
 
 ## Citation
@@ -145,4 +121,5 @@ run this to prepare ```train.txt，val.txt``` for training in [tensorpack](https
 
 
 ## 4. **Acknowledgements**
+
 Sincerely tribute to all companions who contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Zhu(朱彤葳)*、*Zebin Wang(王泽斌)*。
