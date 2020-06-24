@@ -1,13 +1,14 @@
+
 %% Label definition
 %----------------------------------------%
-% 0: vegetation 植被 imgT 后缀：_t.png
-% 1: building 建筑 imgB 后缀：_b.png
-% 2: road 道路 imgR 后缀：_r.png
-% 3: vehicle 车辆 imgV 后缀：_v.png
-% 4: other 其他
+% 0: vegetation 植被 imgT 后缀：_t.png 着色:107,142,35
+% 1: building 除房顶的建筑 imgB 后缀：_b.png 着色:102,102,156
+% 2: road 道路 imgR 后缀：_r.png 着色:128,64,128
+% 3: vehicle 车辆 imgV 后缀：_v.png 着色:0,0,142
+% 4: root 房顶 imgRoof 后缀：_roof.png 着色:70,70,70
+% 5: other 其他 着色:0,0,0
 %----------------------------------------%
 % 未来可能扩展的语义类
-% 建筑类细分类 Building -> Roof + Facade 
 % 两轮车 motor / bicycle
 % 行人 pedestrian
 % 运动场 pitch
@@ -23,7 +24,6 @@ classpath=[path 'gt_class\'];
 
 visual_mode = 1; %是否运行visual脚本
 visual_resizerate=0.25; %对于原图可视化时间过长，可以resize较小尺寸看效果
-mask_or_color = 1; %mask储存模式：1为原图像上的mask，0为只有色块
 split_mode = 0; %是否运行split脚本：1运行，0不运行
 split_visualmode = 0;  %是否可视化split结果：1进行可视化，0不进行可视化 
 src_prefix = '.JPG';
@@ -33,11 +33,13 @@ listing = dir([srcpath '*' src_prefix]);
 imgSum = length(listing);
 for imgNum = 1:imgSum
     imgORI_uri = [srcpath listing(imgNum).name];
-    imgB_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_b.png')];
-    imgT_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_t.png')];
-    imgV_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_v.png')];
-    imgR_uri = [oripath strrep(listing(imgNum).name,src_prefix,'_r.png')];
-    
+    fileName = strrep(listing(imgNum).name,src_prefix,'');
+    imgB_uri = [oripath fileName '/' fileName '_b.png'];
+    imgRoof_uri = [oripath fileName '/' fileName '_roof.png'];
+    imgT_uri = [oripath fileName '/' fileName '_t.png'];
+    imgV_uri = [oripath fileName '/' fileName '_v.png'];
+    imgR_uri = [oripath fileName '/' fileName '_r.png'];
+
     imgGT_uri = [gtpath strrep(listing(imgNum).name,src_prefix,'.png')];
    
     imgVIS_uri = [visualpath strrep(listing(imgNum).name,src_prefix,'_visual_mask.png')];
@@ -90,6 +92,15 @@ for imgNum = 1:imgSum
         imgV = bwmorph(imgV,'close');
         imgGT = imgGT + uint8(~imgV .* 8); % vehicle
     end
+    if exist(imgRoof_uri,'file')
+        imgRoof = imread(imgRoof_uri);
+        if length(size(imgRoof))==3
+            imgRoof = rgb2gray(imgRoof);
+        end
+        imgRoof = imresize(imgRoof,[m n]);
+        imgRoof = bwmorph(imgRoof,'close');
+        imgGT = imgGT + uint8(~imgRoof .* 16); % vehicle
+    end
     
     %----------------------------------------%
     %{
@@ -139,16 +150,18 @@ for imgNum = 1:imgSum
     imgGTout = uint8(zeros(m,n)); % 0 as vegetation
     for i = 1:m
        for j = 1:n
-           if imgGT(i,j) > 7
+           if imgGT(i,j) > 15
+               imgGTout(i,j) = 4; %roof
+           elseif imgGT(i,j) > 7
                imgGTout(i,j) = 3; %vehicle
            elseif imgGT(i,j) > 3
                imgGTout(i,j) = 0; %vegetation
            elseif imgGT(i,j) > 1
                imgGTout(i,j) = 2; %road
            elseif imgGT(i,j) > 0
-               imgGTout(i,j) = 1; %building
+               imgGTout(i,j) = 1; %building(except for roof)
            else
-               imgGTout(i,j) = 4; %other
+               imgGTout(i,j) = 5; %other
            end
        end
     end
@@ -157,8 +170,8 @@ for imgNum = 1:imgSum
     imwrite(imgGTout,imgGT_uri);
     %----------------------------------------%
     if visual_mode
-        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri,0, visual_resizerate);
-        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri2,1, visual_resizerate);
+        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri, 0, visual_resizerate);
+        gtVisual(imgGT_uri,imgORI_uri,imgVIS_uri2, 1, visual_resizerate);
     end
     if split_mode
         gtSplit(imgGT_uri,imgCLASS_uri,split_visualmode);

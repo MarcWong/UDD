@@ -1,6 +1,6 @@
 % img : a 2-D image of semantic label
 % write_file_flag = 1: write file
-function out = gtSplit(gt_uri, class_uri,debug_mode)
+function gtSplit(gt_uri, class_uri,debug_mode)
     display(['%spliting ' gt_uri]);
     %%parameters
 
@@ -23,7 +23,7 @@ function out = gtSplit(gt_uri, class_uri,debug_mode)
     class_groundI = true(m,n);
 
     for i = 1:m
-        for j = 1:n;
+        for j = 1:n
             if gtI(i,j) == 0 %tree  green
                 class_treeI(i,j) = 0;
             elseif gtI(i,j) == 1 %building  red

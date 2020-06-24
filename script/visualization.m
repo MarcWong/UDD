@@ -1,4 +1,4 @@
-visualpath='E:\Dataset\rawm1\visualization\';
+visualpath='G:\Dataset\rawUDDnew\visualization\';
 view_mode = 0; % 0 automatic, 1 manual
 listing = dir([visualpath '*.png']);
 imgSum = length(listing);

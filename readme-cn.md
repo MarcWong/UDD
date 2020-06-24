@@ -44,7 +44,7 @@
 
 ## 1.标注规范
 ### 1.0 植被(树+草地)
-- 1. 打开Photo Shop，按下 alt+F9 打开动作菜单，加载动作脚本tree.atn
+- 1. 打开Photo Shop，按下 alt+F9 打开动作菜单，加载动作脚本ps-annotation.atn
 ![selection](img/action.png)
 - 2. 加载一张原始图像,按下CTRL+F2，植被区域将自动被选定(需要微调)
 ![selection](img/selection.png)
@@ -53,9 +53,9 @@
 - 4. 调整结束后，按下CTRL+F3生成二值图, 保存为原文件名+后缀"_t.png"，例如"DJI_0285_t.png".
 
 *标注样例*
-![tree](img/DJI_0285_t.png)
+![vegetation](img/DJI_0285_t.png)
 
-**[Chinese version of annotation instruction](tree.pdf)**
+**[Chinese version of annotation instruction](ps-annotation.pdf)**
 
 ### 1.1 Building
 - 1、 新建空白图层，通过多边形套索，选取每个建筑，将其填充为黑色
