@@ -1,6 +1,6 @@
 import os
 
-dir = 'E:\\Dataset\\UDD5\\val\\src'
+dir = 'G:\\Dataset\\UDD6\\val\\src'
 srcdir = 'val/src/'
 gtdir = 'val/gt/'
 
@@ -14,8 +14,7 @@ for i in range(0,len(list)):
         f.write(srcdir + list[i] + ' ' + gtdir + str + '\n')
 f.close()
 
-
-dir = 'E:\\Dataset\\UDD5\\train\\src'
+dir = 'G:\\Dataset\\UDD6\\train\\src'
 srcdir = 'train/src/'
 gtdir = 'train/gt/'
 

@@ -9,13 +9,15 @@
 ![visual_mask](img/DJI_0627_visual_mask.png)
 
 **语义类**
+
 |  类别  |Gt 标签|   RGB   | 后缀 |
 |-------|-------|----------|------|
 |  植被  |   0   |(107,142,35)|_t.png|
-|  建筑  |   1   |(70,70,70)|_b.png|
+|  建筑  |   1   |(102,102,156)|_b.png|
 |  道路  |   2   |(128,64,128)|_r.png|
 |  车辆  |   3   |(0,0,142)|_v.png|
-|  其他  |   4   |(0,0,0)| N/A |
+|  房顶  |   4   |(70,70,70) |_roof.png|
+|  其他  |   5   |(0,0,0)| N/A |
 
 
 ### 0.2 下载链接
@@ -24,7 +26,7 @@
 
 本数据集仅供非商业用途使用。
 
-- [UDD-5(train, val) + Trained_Model + m1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
+- [UDD-6(train, val) + UDD-5(train, val) + Trained_Model + m1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
 ## 引用
 
@@ -82,7 +84,7 @@
 **/visualization** ```可视化结果```
 
 ```
-文件名可任意命名，只需要和main.m中的env路径一致即可
+文件名可任意命名，只需要和main.m中的路径一致即可
 ```
 
 
@@ -91,29 +93,35 @@
 - ### [main.m](script/main.m)
 处理标注结果，可自定义语义标签规则。
 
-- ### [gtVisual.m(function，通过main调用)](script/gtVisual.m)
-此函数的参数：
+
+*此函数的参数*：
 ```
-visual_mode = 0; %是否运行此脚本
-visual_resizerate=0.25; %对于原图可视化时间过长，可以resize较小尺寸看效果
-visual_writemode = 0; %是否要保存visualization的结果
-```
-- ### [gtSplit.m(function，通过main调用)](script/gtSplit.m)
-此函数的参数：
-```
-split_mode = 1; %是否运行此脚本
-split_visualmode = 0;  %是否可视化
+visual_mode = 0; % 1运行gtVisual.m
+visual_resizerate=0.25; % 对于原图可视化时间过长，可以resize较小尺寸看效果
+split_mode = 1; % 1运行gtSplit.m
+split_visualmode = 0;  % 1运行visualization.m
 ```
 
-- ### [visualization.m](script/visualization.m)
+- ### [script/gtVisual.m (function，通过main调用)](script/gtVisual.m)
+
+可视化真值图
+
+- ### [script/gtSplit.m (function，通过main调用)](script/gtSplit.m)
+
+
+- ### [script/visualization.m](script/visualization.m)
 执行完main生成visualizati_gt的数据后可运行此脚本看标注效果
 此函数的参数：
 ```
 view_mode = 1; % 0 automatic, 1 manual
 ```
 
-- ### [writeTxt.py](script/tools/writeTxt.py)
+- ### [script/tools/writeTxt.py](script/tools/writeTxt.py)
 使用此函数来生成```train.txt，val.txt```供[tensorpack](https://github.com/MarcWong/tensorpack)训练使用
+
+- ### [script/tools/jpg2png.m](script/tools/jpg2png.m)
+
+将.JPG转为.PNG格式.
 
 ## 4. ***致谢***
 感谢对数据集构建做出贡献的朋友们(排名不分先后): *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Wei(朱彤葳)*、*Zebin Wang(王泽斌)*。

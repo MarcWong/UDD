@@ -13,10 +13,11 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 |   Class  |Gt Label|   RGB   |Suffix|
 |----------|--------|---------|------|
 |Vegetation|   0    |(107,142,35)|_t.png|
-| Building |   1    |(70,70,70)|_b.png|
+| Building |   1    |(102,102,156)|_b.png|
 |  Road    |   2    |(128,64,128)|_r.png|
 |  Vehicle |   3    |(0,0,142)|_v.png|
-|  Other   |   4    |(0,0,0) | N/A |
+|  Roof    |   4    |(70,70,70) |_roof.png|
+|  Other   |   5    |(0,0,0) | N/A |
 
 
 now UDD-5 is on air(*Vegetation, Building, Road, Vehicle, Background*). See Download Link below.
@@ -24,7 +25,7 @@ now UDD-5 is on air(*Vegetation, Building, Road, Vehicle, Background*). See Down
 ### 0.2 Download Link
 This Dataset is only for non-commercial use. 
 
-- [UDD-5(train, val) + Trained_Model(tensorflow) + m1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
+- [UDD-6(train, val) + UDD-5(train, val) + Trained_Model + m1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
 
 ## Citation
@@ -77,47 +78,52 @@ If you benefit from UDD, please cite our paper:
 
 **/gt_class** ```groundtruth split by classes```
 
-**/ori**  ```annotation raw result(annotated '_t.png', '_b.png', etc. are all here)```
+**/ori**  ```annotation raw result(subfolders containing annotated '_t.png', '_b.png', etc. are all here)```
 
 **/visualization** ```visualization result```
 ```
-you can name your directories arbitrarily. Just keep them corresponded to envs in main.m
+you can name your directories arbitrarily. Just keep them corresponding to envs in main.m
 ```
 
 
 ## 3. Scripts
 
-- ### [main.m](script/main.m)
+- ### [script/main.m](script/main.m)
 Processing with raw annotated result. You can DIY your ground truth label here.
 
-- ### [gtVisual.m(function, called by main.m)](script/gtVisual.m)
-
 *parameters*：
 ```
-visual_mode = 0; % 1 to run this script
-visual_resizerate=0.25; % downsample to accelerate
-visual_writemode = 0; % 1 to save visualization result
+visual_mode = 0; % 1 to run gtVisual.m
+visual_resizerate=0.25; % downsample rate to accelerate
+split_mode = 1; % 1 to run gtSplit.m
+split_visualmode = 0;  % 1 to run visualization.m
 ```
 
-- ### [gtSplit.m(function, called by main.m)](script/gtSplit.m)
+- ### [script/gtVisual.m (function, called by main.m)](script/gtVisual.m)
 
-*parameters*：
-```
-split_mode = 1; % 1 to run this script
-split_visualmode = 0;  % 1 to visualize
-```
+To visualize the ground truth map.
 
-- ### [visualization.m](script/visualization.m)
+- ### [script/gtSplit.m (function, called by main.m)](script/gtSplit.m)
 
-After running main.m, you can see the visualization result in**/visualization** by running this script
+To generate some split map
+
+- ### [script/visualization.m](script/visualization.m)
+
+After running main.m, you can see the visualization result in**/visualization** by running this script.
 
 *parameters*：
 ```
 view_mode = 1; % 0 for automatic, 1 for manual
 ```
 
-- ### [writeTxt.py](script/tools/writeTxt.py)
+- ### [script/tools/writeTxt.py](script/tools/writeTxt.py)
+
 run this to prepare ```train.txt，val.txt``` for training in [tensorpack](https://github.com/MarcWong/tensorpack).
+
+
+- ### [script/tools/jpg2png.m](script/tools/jpg2png.m)
+
+Convert JPG to PNG.
 
 
 ## 4. **Acknowledgements**
