@@ -99,7 +99,7 @@ for imgNum = 1:imgSum
         end
         imgRoof = imresize(imgRoof,[m n]);
         imgRoof = bwmorph(imgRoof,'close');
-        imgGT = imgGT + uint8(~imgRoof .* 16); % vehicle
+        imgGT = imgGT + uint8(~imgRoof .* 16); % roof
     end
     
     %----------------------------------------%
@@ -151,17 +151,17 @@ for imgNum = 1:imgSum
     for i = 1:m
        for j = 1:n
            if imgGT(i,j) > 15
-               imgGTout(i,j) = 4; %roof
+               imgGTout(i,j) = 5; %roof
            elseif imgGT(i,j) > 7
-               imgGTout(i,j) = 3; %vehicle
+               imgGTout(i,j) = 4; %vehicle
            elseif imgGT(i,j) > 3
-               imgGTout(i,j) = 0; %vegetation
+               imgGTout(i,j) = 3; %vegetation
            elseif imgGT(i,j) > 1
                imgGTout(i,j) = 2; %road
            elseif imgGT(i,j) > 0
                imgGTout(i,j) = 1; %building(except for roof)
            else
-               imgGTout(i,j) = 5; %other
+               imgGTout(i,j) = 0; %other
            end
        end
     end

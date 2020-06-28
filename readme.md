@@ -10,22 +10,44 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 
 **Class Definitions**
 
+- UDD5
+
 |   Class  |Gt Label|   RGB   |Suffix|
 |----------|--------|---------|------|
 |Vegetation|   0    |(107,142,35)|_t.png|
 | Building |   1    |(102,102,156)|_b.png|
 |  Road    |   2    |(128,64,128)|_r.png|
 |  Vehicle |   3    |(0,0,142)|_v.png|
-|  Roof    |   4    |(70,70,70) |_roof.png|
-|  Other   |   5    |(0,0,0) | N/A |
+|  Other   |   4    |(0,0,0) | N/A |
+
+- UDD6 (Released on 28 Jun 2020)
+
+|   Class  |Gt Label|   RGB   |Suffix|
+|----------|--------|---------|------|
+|  Other   |   0    |(0,0,0) | N/A |
+| Building |   1    |(102,102,156)|_b.png|
+|  Road    |   2    |(128,64,128)|_r.png|
+|Vegetation|   3    |(107,142,35)|_t.png|
+|  Vehicle |   4    |(0,0,142)|_v.png|
+| **Roof** |   5    |(70,70,70) |_roof.png|
 
 
-now UDD-5 is on air(*Vegetation, Building, Road, Vehicle, Background*). See Download Link below.
+### 0.2 CHANGE LOG
 
-### 0.2 Download Link
+|   Date   |  log   |
+|----------|--------|
+|2018.03.15| repo init |
+|2018.03.23| UDD-3 released |
+|2019.11.04| UDD-5 released |
+|2020.06.28| UDD-6 released. Beware of the changing Gt Label!! |
+
+now UDD-6 is on air (*Vegetation, Building, Road, Vehicle, Roof and Other*)! See Download Link below.
+
+### 0.3 Download Link
+
 This Dataset is only for non-commercial use. 
 
-- [UDD-6(train, val) + UDD-5(train, val) + Trained_Model + m1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
+- [UDD-6(train, val) + UDD-5(train, val) + UDD-5_tf_Model + PKU-M1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
 
 ## Citation
@@ -61,7 +83,7 @@ If you benefit from UDD, please cite our paper:
 
 ### 1.1 Building
 - 1. new a black layer, using polygon lasso to select building and fill it with black
-- 2. press CTRL+F3 to generate bitmap, save it by "_b.png" suffix，"DJI_0285_t.png",e.g.
+- 2. press CTRL+F3 to generate bitmap, save it by "_b.png" suffix，"DJI_0285_b.png",e.g.
 
 *example of annotated result*
 ![Building](img/DJI_0285_b.png)
