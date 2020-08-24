@@ -13,13 +13,14 @@
 Now UDD-6 is on air (*Vegetation, Building, Road, Vehicle, Roof and Other*)! See Download Link below.
 
 ## BENCHMARK
-This benchmark is released to seek for better solutions for UDD dataset
+This benchmark is released to seek for better solutions for UDD dataset, OA refers to Overall Accuracy (or pixelwise accuracy) and mIoU refers to mean Intersection over Union. You are welcomed to contribute new results!
+
 | dataset |  model    | OA   | mIoU | size |
 |---------|-----------|------|------|------|
-|UDD5     |  GCN      |88.57%|73.17%|302M|
-|UDD5     |  ENet     |88.14%|71.38%|5.5M|
-|UDD6     |  GCN      |86.54%|72.58%|302M|
-|UDD6     |DeepLab V3+|86.90%|73.18%|721M|
+|UDD5     |  GCN      |88.57%|73.17%|302M  |
+|UDD5     |  ENet     |88.14%|71.38%|5.5M  |
+|UDD6     |  GCN      |86.54%|72.58%|302M  |
+|UDD6     |DeepLab V3+|86.90%|73.18%|721M  |
 
 ## Dataset Overview
 This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
