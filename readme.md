@@ -1,5 +1,16 @@
 # Urban Drone Dataset(UDD)
 
+## CHANGE LOG
+
+|   Date   |  log   |
+|----------|--------|
+|2018.03.15| repo init |
+|2018.03.23| UDD-3 released |
+|2019.11.04| UDD-5 released |
+|2020.06.28| UDD-6 released. Beware of the changing Gt Label!! |
+
+now UDD-6 is on air (*Vegetation, Building, Road, Vehicle, Roof and Other*)! See Download Link below.
+
 ## Dataset Overview
 This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
 
@@ -30,17 +41,6 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 |  Vehicle |   4    |(0,0,142)|_v.png|
 | **Roof** |   5    |(70,70,70) |_roof.png|
 
-
-## CHANGE LOG
-
-|   Date   |  log   |
-|----------|--------|
-|2018.03.15| repo init |
-|2018.03.23| UDD-3 released |
-|2019.11.04| UDD-5 released |
-|2020.06.28| UDD-6 released. Beware of the changing Gt Label!! |
-
-now UDD-6 is on air (*Vegetation, Building, Road, Vehicle, Roof and Other*)! See Download Link below.
 
 ## Download Link
 
