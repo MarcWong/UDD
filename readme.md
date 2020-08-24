@@ -2,14 +2,23 @@
 
 ## CHANGE LOG
 
-|   Date   |  log   |
+|   date   |  log   |
 |----------|--------|
 |2018.03.15| repo init |
 |2018.03.23| UDD-3 released |
 |2019.11.04| UDD-5 released |
 |2020.06.28| UDD-6 released. Beware of the changing Gt Label!! |
+|2020.08.24| UDD Benchmark released |
 
-now UDD-6 is on air (*Vegetation, Building, Road, Vehicle, Roof and Other*)! See Download Link below.
+Now UDD-6 is on air (*Vegetation, Building, Road, Vehicle, Roof and Other*)! See Download Link below.
+
+### BENCHMARK
+| dataset | model   | OA | mIoU | size |
+|---------|---------|----|------|------|
+|  UDD5   |  GCN    |xxxx|xxxxxx|xxxxxx|
+|  UDD5   |  ENet   |xxxx|xxxxxx|xxxxxx|
+|  UDD6   |  GCN    |xxxx|xxxxxx|xxxxxx|
+|  UDD6   |  DeepLab|xxxx|xxxxxx|xxxxxx|
 
 ## Dataset Overview
 This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
