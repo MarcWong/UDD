@@ -49,47 +49,9 @@ This Dataset is only for non-commercial use.
 
 - [UDD-6(train, val) + UDD-5(train, val) + UDD-5_tf_Model + PKU-M1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
+## 1. Labeling Policy
 
-## Citation
-
-If you benefit from UDD, please cite our paper:
-
-```
-@inproceedings{chen2018large,
-  title={Large-scale structure from motion with semantic constraints of aerial images},
-  author={Chen, Yu and Wang, Yao and Lu, Peng and Chen, Yisong and Wang, Guoping},
-  booktitle={Chinese Conference on Pattern Recognition and Computer Vision (PRCV)},
-  pages={347--359},
-  year={2018},
-  organization={Springer}
-}
-```
-
-
-## 1.Labeling Policy (instruction included)
-### 1.0 Vegetation
-- 1. enter photo shop，press alt+F9 to open Action menu，load action script "ps-annotation.atn"
-![selection](img/action.png)
-- 2. open the src url, and press CTRL+F2，a raw mask of vegetation would be generated
-![selection](img/selection.png)
-
-- 3. adjust the selected area by hand(lasso is recommended, just press shift/alt and drag the mouse)
-- 4. then press CTRL+F3 to generate bitmap, save it by "_t.png" suffix，"DJI_0285_t.png",e.g.
-
-*Annotation example*
-![vegetation](img/DJI_0285_t.png)
-
-**[Chinese version of annotation instruction](ps-annotation.pdf)**
-
-### 1.1 Building
-- 1. new a black layer, using polygon lasso to select building and fill it with black
-- 2. press CTRL+F3 to generate bitmap, save it by "_b.png" suffix，"DJI_0285_b.png",e.g.
-
-*example of annotated result*
-![Building](img/DJI_0285_b.png)
-
-### 1.2 Other classes
-- 1. After filled ROI with black, press CTRL+F3 to generate bitmap. Remember to save it by suffix(see **Class Definitions** above)
+So far, only PS-aided labeling policy is provided, please refer to `PS-annotation` for more information.
 
 
 ## 2. Directory Naming Policy
@@ -148,6 +110,17 @@ run this to prepare ```train.txt，val.txt``` for training in [tensorpack](https
 Convert JPG to PNG.
 
 
-## 4. **Acknowledgements**
+## 4. **Citation & Acknowledgements**
 
+If you benefit from UDD, please cite our paper as:
+```
+@inproceedings{chen2018large,
+  title={Large-scale structure from motion with semantic constraints of aerial images},
+  author={Chen, Yu and Wang, Yao and Lu, Peng and Chen, Yisong and Wang, Guoping},
+  booktitle={Chinese Conference on Pattern Recognition and Computer Vision (PRCV)},
+  pages={347--359},
+  year={2018},
+  organization={Springer}
+}
+```
 Sincerely tribute to all companions who contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Zhu(朱彤葳)*、*Zebin Wang(王泽斌)*。

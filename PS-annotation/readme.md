@@ -2,9 +2,9 @@
 ## Labeling Policy (instruction included)
 ### 1.0 Vegetation
 - 1. enter photo shop，press alt+F9 to open Action menu，load action script "ps-annotation.atn"
-![selection](img/action.png)
+![selection](../img/action.png)
 - 2. open the src url, and press CTRL+F2，a raw mask of vegetation would be generated
-![selection](img/selection.png)
+![selection](../img/selection.png)
 
 - 3. adjust the selected area by hand(lasso is recommended, just press shift/alt and drag the mouse)
 - 4. then press CTRL+F3 to generate bitmap, save it by "_t.png" suffix，"DJI_0285_t.png",e.g.
@@ -43,7 +43,7 @@ you can name your directories arbitrarily. Just keep them corresponding to envs 
 
 ## 3. Scripts
 
-- ### [script/main.m](script/main.m)
+- ### [script/main.m](../script/main.m)
 Processing with raw annotated result. You can DIY your ground truth label here.
 
 *parameters*：
@@ -54,15 +54,15 @@ split_mode = 1; % 1 to run gtSplit.m
 split_visualmode = 0;  % 1 to run visualization.m
 ```
 
-- ### [script/gtVisual.m (function, called by main.m)](script/gtVisual.m)
+- ### [script/gtVisual.m (function, called by main.m)](../script/gtVisual.m)
 
 To visualize the ground truth map.
 
-- ### [script/gtSplit.m (function, called by main.m)](script/gtSplit.m)
+- ### [script/gtSplit.m (function, called by main.m)](../script/gtSplit.m)
 
 To generate some split map
 
-- ### [script/visualization.m](script/visualization.m)
+- ### [script/visualization.m](../script/visualization.m)
 
 After running main.m, you can see the visualization result in**/visualization** by running this script.
 
@@ -71,11 +71,11 @@ After running main.m, you can see the visualization result in**/visualization** 
 view_mode = 1; % 0 for automatic, 1 for manual
 ```
 
-- ### [script/tools/writeTxt.py](script/tools/writeTxt.py)
+- ### [script/tools/writeTxt.py](../script/tools/writeTxt.py)
 
 run this to prepare ```train.txt，val.txt``` for training in [tensorpack](https://github.com/MarcWong/tensorpack).
 
 
-- ### [script/tools/jpg2png.m](script/tools/jpg2png.m)
+- ### [script/tools/jpg2png.m](../script/tools/jpg2png.m)
 
 Convert JPG to PNG.
