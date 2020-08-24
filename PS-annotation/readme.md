@@ -1,4 +1,3 @@
-
 ## Labeling Policy (instruction included)
 ### 1.0 Vegetation
 - 1. enter photo shop，press alt+F9 to open Action menu，load action script "ps-annotation.atn"

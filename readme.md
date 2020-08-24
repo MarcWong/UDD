@@ -1,7 +1,6 @@
 # Urban Drone Dataset(UDD)
 
-## 0.Dataset
-### 0.1 Dataset Overview
+## Dataset Overview
 This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
 
 *example of UDD：*
@@ -32,7 +31,7 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 | **Roof** |   5    |(70,70,70) |_roof.png|
 
 
-### 0.2 CHANGE LOG
+## CHANGE LOG
 
 |   Date   |  log   |
 |----------|--------|
@@ -43,18 +42,13 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 
 now UDD-6 is on air (*Vegetation, Building, Road, Vehicle, Roof and Other*)! See Download Link below.
 
-### 0.3 Download Link
+## Download Link
 
 This Dataset is only for non-commercial use. 
 
 - [UDD-6(train, val) + UDD-5(train, val) + UDD-5_tf_Model + PKU-M1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 
-## 1. Labeling Policy
-
-So far, only PS-aided labeling policy is provided, please refer to `PS-annotation` for more information.
-
-
-## 2. Directory Naming Policy
+## Directory Naming Policy
 
 **/src**  ```origin source image```
 
@@ -69,12 +63,15 @@ So far, only PS-aided labeling policy is provided, please refer to `PS-annotatio
 you can name your directories arbitrarily. Just keep them corresponding to envs in main.m
 ```
 
-
-## 3. Scripts
+## Labeling & Scripts
+### Labeling Policy
+So far, only PS-aided labeling policy is provided, please refer to `PS-annotation` for more information.
+### Scripts
 Currently, most scripts are written in Matlab. For more instructions, refer to `script`.
 
 
-## 4. **Citation & Acknowledgements**
+
+## Citation & Acknowledgements
 
 If you benefit from UDD, please cite our paper as:
 ```
