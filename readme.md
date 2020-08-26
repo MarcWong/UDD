@@ -20,6 +20,7 @@ This benchmark is released to seek for better solutions for UDD dataset, OA refe
 |UDD5     |  GCN      |88.57%|73.17%|302M  |
 |UDD5     |  ENet     |88.14%|71.38%|5.5M  |
 |UDD6     |  GCN      |86.54%|72.58%|302M  |
+|UDD6     |  ENet     |85.20%|69.44%|5.5M  |
 |UDD6     |DeepLab V3+|86.90%|73.18%|721M  |
 
 ## Dataset Overview
