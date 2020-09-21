@@ -36,3 +36,7 @@ run this to prepare ```train.txt，val.txt``` for training in [tensorpack](https
 - ### [tools/jpg2png.m](tools/jpg2png.m)
 
 Convert JPG to PNG.
+
+- ### [tools/label2colormap.py](tools/label2colormap.py)
+
+An example Python code to adopt PIL.Image object with mode 'P' to make label maps visualized while read still as labels.
