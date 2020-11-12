@@ -21,9 +21,10 @@ To generate some split map
 
 - ### [visualization.m](visualization.m)
 
-After running main.m, you can see the visualization result in**/visualization** by running this script.
+After running main.m, you can see the visualization result in ```/visualization``` by running this script.
 
 *parameters*：
+
 ```
 view_mode = 1; % 0 for automatic, 1 for manual
 ```

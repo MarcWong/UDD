@@ -58,7 +58,8 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 
 This Dataset is only for non-commercial use. 
 
-- [UDD-6(train, val) + UDD-5(train, val) + UDD-5_tf_Model + PKU-M1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
+- Google Drive: [UDD-6(train, val) + UDD-5(train, val) + UDD-5_tf_Model + PKU-M1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
+- Baidu Cloud: [UDD-5 + UDD-6](https://pan.baidu.com/s/1sQavCwH29PUwTEgF3teMBQ) PW:7qua (Note that this link adopts P mode of PIL so that GT can be viewed with color while directly loaded as label maps)
 
 ## Directory Naming Policy
 
