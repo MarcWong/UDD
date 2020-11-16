@@ -47,7 +47,7 @@ This is a collection of drone image Dataset collected at Peking University, Hulu
 |   Class  |Gt Label|   RGB   |Suffix|
 |----------|--------|---------|------|
 |  Other   |   0    |(0,0,0) | N/A |
-| Building |   1    |(102,102,156)|_b.png|
+| **Facade** |   1    |(102,102,156)|_b.png|
 |  Road    |   2    |(128,64,128)|_r.png|
 |Vegetation|   3    |(107,142,35)|_t.png|
 |  Vehicle |   4    |(0,0,142)|_v.png|
