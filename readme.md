@@ -4,15 +4,13 @@
 
 |   date   |  log   |
 |----------|--------|
-|2018.03.15| repo init |
+|2018.03.15| Initialization |
 |2018.03.23| UDD-3 released |
 |2019.11.04| UDD-5 released |
-|2020.06.28| UDD-6 released. Beware of the changing Gt Label!! |
+|2020.06.28| UDD-6 released |
 |2020.08.24| UDD Benchmark released |
 
-Now UDD-6 is on air (*Vegetation, Building, Road, Vehicle, Roof and Other*)! See Download Link below.
-
-## BENCHMARK
+## Benchmark
 This benchmark is released to seek for better solutions for UDD dataset, OA refers to Overall Accuracy (or pixelwise accuracy) and mIoU refers to mean Intersection over Union. You are welcomed to contribute new results!
 
 | dataset |  model    | OA   | mIoU | size |
@@ -27,62 +25,42 @@ This benchmark is released to seek for better solutions for UDD dataset, OA refe
 This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
 
 *example of UDD：*
-![visual_color](img/DJI_0627_visual_color.png)
-![visual_mask](img/DJI_0627_visual_mask.png)
+<img src="img/DJI_0627_visual_color.png" alt="visual_color" style="zoom:50%;" />
+<img src="img/DJI_0627_visual_mask.png" alt="visual_mask" style="zoom:50%;" />
 
 **Class Definitions**
 
 - UDD5
 
-|   Class  |Gt Label|   RGB   |Suffix|
-|----------|--------|---------|------|
-|Vegetation|   0    |(107,142,35)|_t.png|
-| Building |   1    |(102,102,156)|_b.png|
-|  Road    |   2    |(128,64,128)|_r.png|
-|  Vehicle |   3    |(0,0,142)|_v.png|
-|  Other   |   4    |(0,0,0) | N/A |
+|   Class  |Gt Label|   RGB   |
+|----------|--------|---------|
+|Vegetation|   0    |(107,142,35)|
+| Building |   1    |(102,102,156)|
+|  Road    |   2    |(128,64,128)|
+|  Vehicle |   3    |(0,0,142)|
+|  Other   |   4    |(0,0,0) |
 
 - UDD6 (Released on 28 Jun 2020)
 
-|   Class  |Gt Label|   RGB   |Suffix|
-|----------|--------|---------|------|
-|  Other   |   0    |(0,0,0) | N/A |
-| **Facade** |   1    |(102,102,156)|_b.png|
-|  Road    |   2    |(128,64,128)|_r.png|
-|Vegetation|   3    |(107,142,35)|_t.png|
-|  Vehicle |   4    |(0,0,142)|_v.png|
-| **Roof** |   5    |(70,70,70) |_roof.png|
+|   Class  |Gt Label|   RGB   |
+|----------|--------|---------|
+|  Other   |   0    |(0,0,0) |
+| **Facade** |   1    |(102,102,156)|
+|  Road    |   2    |(128,64,128)|
+|Vegetation|   3    |(107,142,35)|
+|  Vehicle |   4    |(0,0,142)|
+| **Roof** |   5    |(70,70,70) |
 
 
-## Download Link
+## Download Links
 
 This Dataset is only for non-commercial use. 
 
 - Google Drive: [UDD-6(train, val) + UDD-5(train, val) + UDD-5_tf_Model + PKU-M1(train+val+test)](https://drive.google.com/drive/folders/1x172jM6iF6SZjMB4jH8FVRgiuGcJDtIe?usp=sharing)
 - Baidu Cloud: [UDD-5 + UDD-6](https://pan.baidu.com/s/1sQavCwH29PUwTEgF3teMBQ) PW:7qua (Note that this link adopts P mode of PIL so that GT can be viewed with color while directly loaded as label maps)
 
-## Directory Naming Policy
-
-**/src**  ```origin source image```
-
-**/gt**  ```ground truth```
-
-**/gt_class** ```groundtruth split by classes```
-
-**/ori**  ```annotation raw result(subfolders containing annotated '_t.png', '_b.png', etc. are all here)```
-
-**/visualization** ```visualization result```
-```
-you can name your directories arbitrarily. Just keep them corresponding to envs in main.m
-```
-
-## Labeling & Scripts
-### Labeling Policy
-So far, only PS-aided labeling policy is provided, please refer to `PS-annotation` for more information.
-### Scripts
+## Scripts
 Currently, most scripts are written in Matlab. For more instructions, refer to `script`.
-
-
 
 ## Citation & Acknowledgements
 
