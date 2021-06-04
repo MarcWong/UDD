@@ -25,12 +25,10 @@ This benchmark is released to seek for better solutions for UDD dataset, OA refe
 This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
 
 *example of UDD：*
-<img src="img/DJI_0627_visual_color.png" alt="visual_color" style="zoom:50%;" />
-<img src="img/DJI_0627_visual_mask.png" alt="visual_mask" style="zoom:50%;" />
+<img src="img/sample.png" alt="visual_color" style="zoom:50%;" />
 
 
-
-**Class Definitions**
+**Class Definition**
 
 - UDD5
 
@@ -60,7 +58,7 @@ This Dataset is only for non-commercial use.
 
 **UDD-5 + UDD-6**: train+val
 - [Google Drive](https://drive.google.com/file/d/1BNL8HNFRiNjSzdcQJo-uXiejZJ6DgunY/view?usp=sharing)
-- [Baidu Cloud](https://pan.baidu.com/s/1sQavCwH29PUwTEgF3teMBQ) PW:7qua
+- [Baidu Cloud](https://pan.baidu.com/s/1sQavCwH29PUwTEgF3teMBQ) (PW:7qua)
 
 **M1**: only src images, can be used for reconstruction
 - [Google Drive]()
