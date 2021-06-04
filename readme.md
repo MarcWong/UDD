@@ -63,7 +63,7 @@ This Dataset is only for non-commercial use.
 - Baidu Cloud: [UDD-5 + UDD-6](https://pan.baidu.com/s/1sQavCwH29PUwTEgF3teMBQ) PW:7qua (Note that this link adopts P mode of PIL so that GT can be viewed with color while directly loaded as label maps)
 
 ## Scripts
-Currently, most scripts are written in Matlab. For more instructions, refer to `script`.
+We also proviode a simple toolbox to do basic operations, please refer to `script`.
 
 ## Citation & Acknowledgements
 
