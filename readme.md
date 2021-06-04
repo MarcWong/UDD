@@ -25,8 +25,11 @@ This benchmark is released to seek for better solutions for UDD dataset, OA refe
 This is a collection of drone image Dataset collected at Peking University, Huludao city, Henan University and Cangzhou city.
 
 *example of UDD：*
+<center class="half">
 <img src="img/DJI_0627_visual_color.png" alt="visual_color" style="zoom:50%;" />
 <img src="img/DJI_0627_visual_mask.png" alt="visual_mask" style="zoom:50%;" />
+<center>
+
 
 **Class Definitions**
 
