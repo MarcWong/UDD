@@ -81,4 +81,4 @@ If you benefit from UDD, please cite our paper as:
   organization={Springer}
 }
 ```
-Sincerely tribute to all companions who contributed to this Dataset: *Yao Wang(王尧)*、*Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*Jianyuan Guo(郭健元)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Zhu(朱彤葳)*、*Zebin Wang(王泽斌)*、*Qingtian Zhu(朱擎天)*。
+Sincerely tribute to all companions who contributed to this Dataset: *Xiao Deng(邓枭)*、*Youpeng Gu(顾友鹏)*、*[Jianyuan Guo (郭健元)](https://github.com/ggjy)*、*Chen Hou(侯忱)*、*Zhao Jin(金朝)*、*Boning Song(宋博宁)*、*You'er Wen(文佑尔)*、*Yang Yao(姚洋)*、*Kangrui Yi(易康睿)*、*Haotian Zhou(周昊天)*、*Youkun Wu(吴有堃)*、*Xupu Wang(王旭普)*、*Tongwei Zhu(朱彤葳)*、*Zebin Wang(王泽斌)*、*[Qingtian Zhu (朱擎天)](https://github.com/QT-Zhu)*、*[Yao Wang (王尧)](https://github.com/MarcWong)*。
